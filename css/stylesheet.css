@@ -1,0 +1,756 @@
+/*ANYTHING ON INDEX PAGE GOES HERE*/
+
+    @font-face
+    {
+    font-family: FirstFont;
+    src: url("/resources/fonts/Park Lane NF.ttf");
+    }
+    
+    @font-face
+    {
+    font-family: SecondFont;
+    src: url("/resources/fonts/C_BOX.ttf");
+    }
+    
+    @font-face
+    {
+    font-family: ThirdFont;
+    src: url("/resources/fonts/NightStillComes_mine_final_sample.otf");
+    }
+
+    h1
+    {
+        font-family: SecondFont;
+        color: white;
+        font-size: 55px;
+    }
+
+    body
+    {
+        /*background-image: url("/~s3490036/wp/a2/resources/paper.jpg");*/
+        background-image: url("/resources/blue.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        margin:0;
+        font-family: ThirdFont;
+        color:white;
+    }
+
+    a, u
+    {
+        text-decoration: none;
+    }
+
+    :active, :focus
+    {
+        outline:none !important;
+    }
+
+    header
+    {
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+    }
+
+    hr
+    {
+        color: white;
+        margin: 0px;
+        width:100%;
+    }
+
+    .content-container
+    {
+        margin:0 auto;
+        width:70%;
+    }
+
+    .logoName
+    {
+        margin:0;
+    }
+
+    #goposter
+    {
+        width: 100%;
+        border-radius: 10px; /*sorry I fixed it was just helping :-)*/
+    }
+    
+    #poster
+    {
+        width:100%;
+        margin:0 auto;
+        margin-top:10px;
+    }
+    
+    #logo
+    {
+        width:150px;
+        height:auto;
+        padding:10px;
+    }
+    
+    #logo-container
+    {
+        display:inherit;
+        flex-direction:column;
+        align-self:center;
+    }
+    
+    #logo-container a
+    {
+        align-self: center;
+    }
+    
+    nav
+    {
+        width:100%;
+    }
+
+    nav > ul
+    {
+        
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        list-style-type:none;
+        padding:0px;
+        width:100%;
+    }
+    
+    nav > ul > li
+    {
+        border-radius: 5px;
+        display: flex;
+    }
+    
+    nav ul li::after
+    {
+        content:'|';
+        align-self:center;
+    }
+    
+    nav ul li:last-child::after
+    {
+        content:'';
+    }
+    
+
+    nav > ul > li > a
+    {
+        text-decoration:none;
+        color: white;
+        margin:5px 20px;
+        font-size:20px;
+        padding:5px;
+    }
+
+    nav a:hover 
+    {
+        transition: background-color 0.5s ease;
+        background-color: rgba(236, 254, 254, 0.70);
+        border-radius: 5px;
+        color:rgb(17, 43, 73);
+    }
+
+    .carousel
+    {
+        margin: 10px 0;
+    }
+
+    #carousel > ul > li
+    {
+        display: inline-block;
+        list-style-type: none;
+        padding-right: 15px;
+        width: 200px;
+        height: 280px;
+    }
+
+    .carousel-movie
+    {
+        margin:0 auto;
+        width:200px;
+        height:280px;
+        border-radius:10px;
+    }
+    
+    .slick-arrow
+    {
+        width: 25px;
+        height: 25px;
+        
+    }
+
+    .slick-slide
+    {
+        width:200px; 
+        height:280px;
+    }
+
+
+    .slick-next::before
+    {
+        /*content: url("/~s3490036/wp/a2/resources/arrowright.png");*/
+        content: url("/resources/arrowright.png");
+       
+    }
+
+    .slick-next
+    {
+        right:-50px;
+    }
+
+    .slick-prev::before
+    {
+        /*content: url("/~s3490036/wp/a2/resources/arrowleft.png");*/
+        content: url("/resources/arrowleft.png");
+        
+    }
+
+    .slick-list
+    {
+        /*background:#1D1E1A;*/
+        border-radius:15px;
+        padding:20px 0;
+    }
+
+    .slick-prev
+    {
+        left:-50px;
+    }
+
+    #index-info
+    {
+        background-color: rgba(236, 254, 254, 0.70);
+        border-radius: 10px;
+        font-family: thirdFont;
+        color: rgb(17, 43, 73);
+        font-size:20px;
+        padding:10px;
+    }
+    
+    #index-info p
+    {
+        padding:0 20px;
+    }
+    
+    #swirls
+    {
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+    }
+    
+     /*END OF INDEX PAGE*/
+     
+    /*STYLING FOR INDEX PAGE IN MOBILE VIEW*/
+    @media screen and (max-width: 480px)
+    {
+        .logoName{
+            text-align:center;
+        }
+        
+        nav > ul > li{
+            width:25%;
+            justify-content:center;
+        }
+        
+         nav ul li::after{
+        content:'';
+        }
+        
+        nav > ul > li:last-child{
+            text-align:center;
+        }
+        
+        .content-container{
+            width:90%;
+        }
+    }
+    /*END OF INDEX PAGE MOBILE VIEW*/
+
+    /*START OF MOVIES PAGE*/
+    
+    #movies-body-container
+    {
+        width:100%;
+        margin:10px 0;
+    }
+
+    #movies-body-container > ul > li
+    {
+        list-style-type: none;
+        width: 95%;
+        height: 40%;
+        background-color: rgba(236, 254, 254, 0.70);
+        padding: 2% 2.5% 2% 2.5%;
+        border-radius: 10px;
+        color: rgb(17, 43, 73);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom:15px;
+    }
+
+    #movies-body-container > ul
+    {
+        padding: 0;
+        width:100%;
+        margin:0;
+    }
+
+    .movie-item
+    {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        width:100%;
+    }
+
+    .movie-img
+    {
+        width:21%;
+        height:280px;
+        margin-right: 2%;
+        border-radius:10px;
+    }
+
+    .movie-description
+    {
+        width:77%;
+        margin:0;
+        display:block;
+    }
+
+    .session
+    {
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        background-color: rgba(115, 160, 170,0.7);
+        border-radius: 5px;
+        margin-right: 10px;
+        padding:5px;
+        min-width:13%;
+        margin-top: 2%;
+
+
+    }
+
+    
+
+    .session > p
+    {
+        font-family: thirdFont;
+        font-size: 20px;
+        padding:0;
+        margin:5px;
+    }
+
+    .session > p > a
+    {
+        width:100%;
+        height:100%;
+        color:white;
+    }
+    
+    .session > p > a:hover
+    {
+        transition: background-color 0.5s ease;
+        background-color: rgba(236, 254, 254, 0.70);
+        border-radius: 5px;
+        padding:5px;
+        color:rgb(17, 43, 73);
+    }
+
+    .sessionTimes
+    {
+        display:none;
+        align-self:baseline; 
+        border-radius: 0px 0px 5px 5px;
+        width:100%;
+    }
+
+    .sessions-container
+    {
+        display: flex;
+        flex-flow:row wrap;
+        align-items:center;
+        justify-content: flex-start;
+        width:100%;
+    }
+
+    .displaySessionTimes{
+        padding:15px;
+        border-radius: 5px;
+        border: 1px solid #9BADAD;
+        box-shadow: 0 2px 0 #9BADAD;
+        background-color: rgb(236, 254, 254);
+        color:black;
+        font-size: 15px;
+        width:30%;
+    }
+
+    .displaySessionTimes:active{
+        box-shadow: none;
+        transform:translateY(2px);
+    }
+
+    /*END MOVIES PAGE*/
+
+    /*STYLING FOR MOVIES PAGE IN MOBILE VIEW*/
+    @media screen and (max-width: 480px)
+    {
+        .movie-description{
+            display:none;
+            margin-top:5%;
+        }
+        
+         .movie-img{
+            width:189px;
+        }
+        .movie-item{
+            flex-direction:column;
+            align-items:center;
+        }
+    
+        .displaySessionTimes{
+            width:100%;
+        }
+    }
+    
+    /*END OF MOVIES PAGE MOBILE VIEW*/
+    
+    
+    /*START OF BOOKINGS PAGE*/
+    #bookings-form
+    {
+        width:90%;
+        background: rgba(236, 254, 254, 0.70);
+        border-radius:10px;
+        margin-top: 10px;
+        padding:5%;
+        display:flex;
+        flex-direction:column;
+    }
+
+    #bookings-form label
+    {
+        font-size: 20px;
+        font-family: ThirdFont;
+        color:rgb(17, 43, 73);
+        padding-bottom: 5px;
+    }
+
+    #bookings-form select
+    {
+        -webkit-appearance: none;
+        cursor: pointer;
+        font-size: 15px;
+        padding:10px;
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px; 
+    }
+
+    .ticketing
+    {
+        font-size: 15px;
+        padding: 10px;
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px;
+    }
+
+    #form-columns
+    {
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
+    #left-side
+    {
+        width:49%;
+        display:inherit;
+        flex-direction:column;
+        border-radius: 10px;
+    }
+
+    #right-side
+    {
+        width:49%;
+        display:inherit;
+        flex-direction:column;
+        border-radius: 10px;
+    }
+
+    #submit-booking
+    {
+        padding:15px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #9BADAD;
+        box-shadow: 0 1px 0 #9BADAD;
+        background-color: rgb(236, 254, 254);
+        width:100px;
+        color:black;
+        font-size: 15px;
+        width:100%;
+    }
+
+    #submit-booking:active
+    {
+        box-shadow: none;
+        transform: translateY(2px);
+    }
+
+    #total-price-container
+    {
+        margin-top: 66.5%;
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-end;
+
+    }
+
+    #total-price
+    {
+        width:13%;
+        font-size: 15px;
+        padding: 10px;
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px;
+        text-align:center;
+    }
+
+    #bookings-form #price-label
+    {
+        font-size: 20px;
+        font-family: ThirdFont;
+        color:rgb(17, 43, 73);
+        padding: 0;
+        align-self: center;
+    }
+
+    /*END BOOKINGS PAGE*/
+    
+    /*STYLING FOR BOOKINGS PAGE IN MOBILE VIEW*/
+    @media screen and (max-width: 480px)
+    {
+        #left-side
+        {
+            width:100%;
+        }
+        
+        #right-side
+        {
+            width:100%;
+        }
+        
+        #form-columns
+        {
+            flex-direction:column;
+        }
+        
+        #total-price-container 
+        {
+            margin-top: 5%;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        #total-price
+        {
+            align-self:center;
+            width: 30%;
+        }
+
+    }
+    
+    /*END BOOKINGS PAGE IN MOBILE VIEW*/
+    
+    
+    /*START OF CONTACT US PAGE*/
+    #contactus-container
+    {
+        display:flex;
+        width:90%;
+        flex-direction:row;
+        justify-content: space-between;
+        background: rgba(236, 254, 254, 0.70);
+        border-radius:10px;
+        margin-top: 10px;
+        padding:5%;
+    }
+
+    #form-content
+    {
+        width:45%;
+        display:inherit;
+        flex-direction:column;
+        padding-right:2.5%;
+    }
+
+    #form-content > label
+    {
+        font-size: 20px;
+        font-family: ThirdFont;
+        color:rgb(17, 43, 73);
+        padding-bottom: 5px;
+    }
+
+
+    #map
+    {
+        width:45%;
+        padding:2.5%;
+        border-radius: 10px;
+    }
+
+
+
+
+    #email
+    {
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px;
+        padding: 10px;
+        font-size: 15px;
+        
+    }
+
+    #subject
+    {
+        -webkit-appearance: none;
+        cursor: pointer;
+        font-size: 15px;
+        padding:10px;
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px; 
+    }
+
+    #message
+    {
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px;
+        padding:10px;
+        resize:none;
+        font-size: 15px;
+    }
+
+
+    #submit
+    {
+        padding:15px;
+        border-radius: 5px;
+        border: 1px solid #9BADAD;
+        box-shadow: 0 1px 0 #9BADAD;
+        background-color: rgb(236, 254, 254);
+        width:100px;
+        color:black;
+        font-size: 15px;
+        width:100%;
+    }
+
+    #submit:active
+    {
+        box-shadow: none;
+        transform: translateY(2px);
+    }
+
+
+
+    /*END CONTACT US PAGE*/
+    
+    /*STYLING FOR CONTACT US PAGE IN MOBILE VIEW*/
+    @media screen and (max-width: 480px)
+    {
+        #contactus-container
+        {
+            flex-direction: column;
+        }
+        
+        #form-content
+        {
+            width:100%;        
+        }
+        
+        #map
+        {
+            width:100%;
+            height:400px;
+            padding: 0;
+            margin-top: 20px;
+        }
+    }
+    /*END CONTACT US PAGE IN MOBILE VIEW*/
+    
+    /*START PRICING PAGE*/
+
+        #seatPriceList, #weeklySchedule
+        {
+            border:3px solid #F0F0F0;
+            border-radius:50px;
+            padding:20px;
+            width:100%;
+            border-radius:10px;
+            margin-top: 10px;
+            padding:5%;
+            background-color:rgba(236, 254, 254, 0.70);
+            color:rgb(17, 43, 73);
+        }
+        
+        #weeklySchedule tr th
+        {
+            background-color:rgb(35, 57, 100);
+            padding:12px;
+            border-radius:3px;
+            color:white;
+        }
+        
+        #weeklySchedule th
+        {
+           margin-bottom:10px;
+        }
+        
+        #seatPriceList tr th
+        {
+            background-color:rgb(35, 57, 100);
+            padding:5px;
+            border-radius:3px;
+            color:white;
+        }
+        
+        #seatPriceList tr .align-left
+        {
+            text-align:left;
+        }
+        
+        #seatPriceList tr td
+        {
+            text-align:center;
+        }
+        
+        .bigger
+        {
+            font-family:ThirdFont;
+            font-size:40px;
+            text-align:center;
+        }
+        
+        #swirlBottom
+        {
+            transform:rotateZ(180deg);
+        }
+    
+    /*END PRICING PAGE*/
+
