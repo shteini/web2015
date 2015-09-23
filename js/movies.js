@@ -12,8 +12,7 @@ $(document).ready(function(){
 			var description = this.description[0];
 			description+="<button class='displaySessionTimes'>Movie Session Times</button>";//Need to fix this
 			$(htmlElement).find(".movie-description").html(description); //And fix this to use correct descriptions
-			$(htmlElement).find(".trailer").attr("src",this.trailer);
-
+			$(htmlElement).next("div").find("video").attr("src",this.trailer);
 			i++;
 		})
 		
