@@ -4,7 +4,7 @@
 <body>
 
 	
-	<input type="password" name="asda"/>
+	<input type="passworda" name="asda"/>
 		
 	<div class="content-container">
 		<?php include("header.php"); ?>
