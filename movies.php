@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include("head.php"); ?>
 <body>
-	<input type="password" name="asdasd"/>
+	<input type="password" name="asdasdasdadsada"/>
 		
 	<div class="content-container">
 		<?php include("header.php"); ?>
