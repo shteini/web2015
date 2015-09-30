@@ -3,8 +3,6 @@
 <?php include("head.php"); ?>
 <body>
 
-	
-	<input type="passworda" name="asda"/>
 		
 	<div class="content-container">
 		<?php include("header.php"); ?>
