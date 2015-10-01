@@ -2,7 +2,10 @@
 <html lang="en">
 <?php include("head.php"); ?>
 <body>
+
 	
+	
+		
 	<div class="content-container">
 		<?php include("header.php"); ?>
 		<div id="movies-body-container">
@@ -18,6 +21,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 						  	<div class="session">
@@ -55,6 +59,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 						  	<div class="session">
@@ -102,6 +107,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 							<div class="session">
@@ -150,6 +156,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 							<div class="session">

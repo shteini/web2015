@@ -5,7 +5,6 @@
 
 	<body>
 		
-		<p></p>
 
 		<div class="content-container">
 
