@@ -17,10 +17,13 @@
 
 						<img class="movie-img" src="" alt="">
 						<p class="movie-description">
-							
-						</p>
+							span
+							<span id="rating"></span>
 
+						</p>
+						
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 						  	<div class="session">
@@ -45,7 +48,6 @@
 							</div>
 						</div>
 						<video controls>
-							<source class="trailer" src="" type="video/mp4">
 						</video>
 						
 					</div>
@@ -58,6 +60,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 						  	<div class="session">
@@ -90,7 +93,6 @@
 							</div>
 						</div>
 						<video controls>
-							<source class="trailer" src="" type="video/mp4">
 						</video>
 						
 					</div>
@@ -105,6 +107,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 							<div class="session">
@@ -137,7 +140,6 @@
 							</div>
 						</div>
 						<video controls>
-							<source class="trailer" src="" type="video/mp4">
 						</video>
 						
 					</div>
@@ -153,6 +155,7 @@
 						</p>
 
 					</div>
+					<button class='displaySessionTimes'>Movie Session Times</button>
 					<div class="sessionTimes">
 						<div class="sessions-container">
 							<div class="session">
@@ -173,7 +176,6 @@
 							</div>
 						</div>
 						<video controls>
-							<source class="trailer" src="" type="video/mp4">
 						</video>
 						
 					</div>

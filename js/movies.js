@@ -9,10 +9,12 @@ $(document).ready(function(){
 
 			var htmlElement = movieItems[i];
 			$(htmlElement).find(".movie-img").attr("src",this.poster);
-			var description = this.description[0];
-			description+="<button class='displaySessionTimes'>Movie Session Times</button>";//Need to fix this
-			$(htmlElement).find(".movie-description").html(description); //And fix this to use correct descriptions
-			$(htmlElement).next("div").find("video").attr("src",this.trailer);
+			var description = this.description[1];
+			var rating = this.rating;
+			var summary = this.summary;
+			$(htmlElement).find(".movie-description").html(description + rating + summary); //And fix this to use correct descriptions
+
+			$(htmlElement).parents("li").find("video").attr("src",this.trailer);
 			i++;
 		})
 		
