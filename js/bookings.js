@@ -301,70 +301,70 @@ function setupPrices(day, time)
 {
 	if( (day == "monday" || day == "tuesday") || (day == "wednesday" && time == "1 PM") || (day == "thursday" && time == "1 PM") || (day == "friday" && time == "1 PM") )
 	{
-		var label = $("label[for='SA']");
+		var label = $("label[for='ticket[SA]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $12");
 
-		var label = $("label[for='SP']");
+		var label = $("label[for='ticket[SP]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $10");
 
-		var label = $("label[for='SC']");
+		var label = $("label[for='ticket[SC]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $8");
 
-		var label = $("label[for='FA']");
+		var label = $("label[for='ticket[FA]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $25");
 
-		var label = $("label[for='FC']");
+		var label = $("label[for='ticket[FC]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $20");
 
-		var label = $("label[for='B1']");
+		var label = $("label[for='ticket[B1]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $20");
 		
-		var label = $("label[for='B2']");
+		var label = $("label[for='ticket[B2]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $20");
 		
-		var label = $("label[for='B3']");
+		var label = $("label[for='ticket[B3]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $20");
 		
 	}
 	else
 	{
-		var label = $("label[for='SA']");
+		var label = $("label[for='ticket[SA]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $18");
 
-		var label = $("label[for='SP']");
+		var label = $("label[for='ticket[SP]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $15");
 
-		var label = $("label[for='SC']");
+		var label = $("label[for='ticket[SC]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $12");
 
-		var label = $("label[for='FA']");
+		var label = $("label[for='ticket[FA]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $30");
 
-		var label = $("label[for='FC']");
+		var label = $("label[for='ticket[FC]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $25");
 
-	var label = $("label[for='B1']");
+	var label = $("label[for='ticket[B1]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $30");
 		
-		var label = $("label[for='B2']");
+		var label = $("label[for='ticket[B2]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $30");
 		
-		var label = $("label[for='B3']");
+		var label = $("label[for='ticket[B3]']");
 		var labelText = label.text();
 		label.text(labelText.toString() + " $30");
 	}
