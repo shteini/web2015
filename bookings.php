@@ -15,42 +15,42 @@ session_start();
 	<div class="content-container">
 	<?php include("header.php"); ?>
 
-			<form id="bookings-form" action="http://titan.csit.rmit.edu.au/~e54061/wp/testbooking.php" method="post">
+			<form id="bookings-form" action="cart.php" method="post">
 				<div id="form-columns">
 
 				<div id="left-side">
 						<!-- NEED TO PUT PRICE SELECTION INPUTS HERE
 						**** They should automatically style themselves as I've set it up
 						**** that way. Let me know if I can help :-) Hope you're having a good day today! -->
-						<label for="SA">FullPrice:</label>
-						<input name="SA" class="ticketing" type="number" min="0">
+						<label for="ticket[SA]">FullPrice:</label>
+						<input name="ticket[SA]" class="ticketing" type="number" min="0">
 						<br>
-						<label for="SP">Concession:</label>
-						<input name="SP"class="ticketing" type="number" min="0">
+						<label for="ticket[SP]">Concession:</label>
+						<input name="ticket[SP]"class="ticketing" type="number" min="0">
 						<br>
-						<label for="SC">Child:</label>
-						<input name="SC"class="ticketing" type="number" min="0">
+						<label for="ticket[SC]">Child:</label>
+						<input name="ticket[SC]"class="ticketing" type="number" min="0">
 						<br>
-						<label for="FA">First Class - Adult:</label>
-						<input name="FA"class="ticketing" type="number" min="0">
+						<label for="ticket[FA]">First Class - Adult:</label>
+						<input name="ticket[FA]"class="ticketing" type="number" min="0">
 						<br>
-						<label for="FC">First Class - Child:</label>
-						<input name="FC"class="ticketing" type="number" min="0">
+						<label for="ticket[FC]">First Class - Child:</label>
+						<input name="ticket[FC]"class="ticketing" type="number" min="0">
 						<br>
-						<label for="B1">First Class - Adult and Child Beanbag:</label>
-						<input name="B1"class="ticketing" type="number" min="0">
+						<label for="ticket[B1]">First Class - Adult and Child Beanbag:</label>
+						<input name="ticket[B1]"class="ticketing" type="number" min="0">
 						<br>
-						<label for="B2">First Class - 2 Adults Beanbag:</label>
-						<input name="B2"class="ticketing" type="number" min="0">
+						<label for="ticket[B2]">First Class - 2 Adults Beanbag:</label>
+						<input name="ticket[B2]"class="ticketing" type="number" min="0">
 						<br>
-						<label for="B3">First Class - 3 Children Beanbag:</label>
-						<input name="B3"class="ticketing" type="number" min="0">
+						<label for="ticket[B3]">First Class - 3 Children Beanbag:</label>
+						<input name="ticket[B3]"class="ticketing" type="number" min="0">
 						<br>
 						
 					</div>
 					<div id="right-side">
 						<label for="movies">Movie</label>
-						<select name="movie" id="movies" required>
+						<select name="movie-name" id="movies" required>
 						<option value="">Select a movie</option>
 						<option value="Iron Man">Iron Man</option>	
 						<option value="Mao's Last Dancer">Mao's Last Dancer</option>
@@ -92,7 +92,7 @@ session_start();
 						</select>
 						<div id="total-price-container">
 							<label id="price-label" for="price">Total:$</label>
-							<input name="price" id="total-price" type="text" readonly value="0.00">
+							<input id="total-price" type="text" readonly value="0.00">
 						</div>
 					</div>
 				</div>
