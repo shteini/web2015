@@ -4,6 +4,7 @@ session_start();
 
 <?php 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ session_start();
 						<!-- NEED TO PUT PRICE SELECTION INPUTS HERE
 						**** They should automatically style themselves as I've set it up
 						**** that way. Let me know if I can help :-) Hope you're having a good day today! -->
-						<label for="SA">FullPrice:</label>
+						<label for="SA">Adult:</label>
 						<input name="SA" class="ticketing" type="number" min="0">
 						<br>
 						<label for="SP">Concession:</label>
