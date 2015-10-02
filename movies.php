@@ -47,7 +47,7 @@
 								<p><a href="/bookings.php?movie=iron_man&day=sunday&time=9_PM">9:00pm</a></p>
 							</div>
 						</div>
-						<video controls>
+						<video controls class="videoStyle">
 						</video>
 						
 					</div>
@@ -92,7 +92,7 @@
 								<p><a href="/bookings.php?movie=tinkerbell&day=sunday&time=12_PM">12:00pm</a></p>
 							</div>
 						</div>
-						<video controls>
+						<video controls class="videoStyle">
 						</video>
 						
 					</div>
@@ -139,7 +139,7 @@
 								<p><a href="/bookings.php?movie=the_proposal&day=sunday&time=6_PM">6:00pm</a></p>
 							</div>
 						</div>
-						<video controls>
+						<video controls class="videoStyle">
 						</video>
 						
 					</div>
@@ -175,7 +175,7 @@
 								<p><a href="/bookings.php?movie=mao's_last_dancer&day=sunday&time=3_PM">3:00pm</a></p>
 							</div>
 						</div>
-						<video controls>
+						<video controls class="videoStyle">
 						</video>
 						
 					</div>

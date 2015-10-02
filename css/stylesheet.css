@@ -398,6 +398,10 @@
         transform:translateY(2px);
     }
 
+    .videoStyle {
+        padding: 30px 0px;
+    }
+
     /*END MOVIES PAGE*/
 
     /*STYLING FOR MOVIES PAGE IN MOBILE VIEW*/
