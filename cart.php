@@ -43,24 +43,27 @@
 
 	function getPrice($day, $time, $key)
 	{
-		if(($day == 'Monday' |'Tuesday') || $time == '1 PM')
+		if(($day == 'Monday' ||'Tuesday') || $time == '1 PM')
 		{
-			return offPeakPriceList[$key];
+			return $offPeakPriceList[$key];
 		}
 		else
 		{
-			return peakPriceList[$key];
+			return $peakPriceList[$key];
 		}
 	}
 
 	foreach($_POST['ticket'] as $key => $value)
 	{
-		$tickets = array(
-			'ticket-type' => $ticketNames[$key],
-			'price' => getPrice($_POST['day'], $_POST['time'], $key),
-			'qty' => $value,
-			'total' => 0.00
-		)
+		if($value > 0)
+		{
+			$tickets = array(
+				'ticket-type' => $ticketNames[$key],
+				'price' => getPrice($_POST['day'], $_POST['time'], $key),
+				'qty' => $value,
+				'total' => 0.00
+			);
+		}
 	}
 
 	$_SESSION['cart']['screening'][] = array(
@@ -80,10 +83,10 @@
 
 <!doctype html>
 <html lang="en">
-<?php include(head.php);?>
+<?php include("head.php");?>
 <body>
 	<div class="content-container">
-    	<?php include(header.php);?>
+    	<?php include("header.php");?>
 
 		<div id="">
 			<?php 
@@ -100,7 +103,7 @@
 		</div>
 
     	
-    	<?php include(footer.php);?>
+    	<?php include("footer.php");?>
     </div>
 </body>
 </html>
