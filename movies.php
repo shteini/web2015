@@ -11,16 +11,16 @@
 		<div id="movies-body-container">
 
 			<ul>
-
 				<li id="ironman">
 					<div class="movie-item">
 
 						<img class="movie-img" src="" alt="">
-						<p class="movie-description">
-							span
-							<span id="rating"></span>
 
-						</p>
+						<div class="movie-information">
+							<h2 class="movieName"></h2>
+							<img class="rating" src="" alt="">
+							<p class="movie-description"></p>
+						</div>
 						
 					</div>
 					<button class='displaySessionTimes'>Movie Session Times</button>
@@ -55,9 +55,12 @@
 				<li id="tinkerbell">
 					<div class="movie-item">
 						<img class="movie-img" src="" alt="">
-						<p class="movie-description">
-							
-						</p>
+						<div class="movie-information">
+							<h2 class="movieName"></h2>
+							<img class="rating" src="" alt="">
+							<p class="movie-description"></p>
+						</div>
+						
 
 					</div>
 					<button class='displaySessionTimes'>Movie Session Times</button>
@@ -102,9 +105,11 @@
 				<li id="proposal">
 					<div class="movie-item">
 						<img class="movie-img" src="" alt="">
-						<p class="movie-description">
-							
-						</p>
+						<div class="movie-information">
+							<h2 class="movieName"></h2>
+							<img class="rating" src="" alt="">
+							<p class="movie-description"></p>
+						</div>
 
 					</div>
 					<button class='displaySessionTimes'>Movie Session Times</button>
@@ -149,10 +154,12 @@
 				<li id="dancer">
 					<div class="movie-item">
 
-					<img class="movie-img" src="" alt="">
-						<p class="movie-description">
-							
-						</p>
+						<img class="movie-img" src="" alt="">
+						<div class="movie-information">
+							<h2 class="movieName"></h2>
+							<img class="rating" src="" alt="">
+							<p class="movie-description"></p>
+						</div>
 
 					</div>
 					<button class='displaySessionTimes'>Movie Session Times</button>

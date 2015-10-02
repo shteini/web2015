@@ -305,7 +305,6 @@
     {
         display:flex;
         flex-direction:row;
-        flex-wrap:wrap;
         width:100%;
     }
 
@@ -315,6 +314,19 @@
         height:280px;
         margin-right: 2%;
         border-radius:10px;
+    }
+
+    .movie-information
+    {
+        display:flex;
+        flex-direction:column;
+    }
+
+    .rating
+    {
+        width:150px;
+        height:52px;
+        margin-bottom: 10px;
     }
 
     .movie-description
