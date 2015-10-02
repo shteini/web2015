@@ -11,10 +11,15 @@ $(document).ready(function(){
 			var htmlElement = movieItems[i];
 			$(htmlElement).find(".movie-img").attr("src",this.poster);
 			var description = this.description[1];
-			
+
+			var title = this.title;
 			var rating = this.rating;
-			var summary = this.summary;
-			$(htmlElement).find(".movie-description").html(description + rating + summary); //And fix this to use correct descriptions
+			var summary = this.summary; // Not being used atm
+
+			$(htmlElement).find(".movie-information").find(".movieName").html(title);
+			$(htmlElement).find(".movie-information").find(".rating").attr("src",rating);
+			$(htmlElement).find(".movie-information").find(".movie-description").html(description);
+
 
 			$(htmlElement).parents("li").find("video").attr("src",this.trailer);
 			i++;
