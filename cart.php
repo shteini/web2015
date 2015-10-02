@@ -86,7 +86,17 @@
     	<?php include(header.php);?>
 
 		<div id="">
-			
+			<?php 
+				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+				{
+					if(isset($_SESSION['cart']))
+					{
+						echo "<p>Movie name {$_SESSION['cart']['screening']['movie-name']}</p>";
+						echo "<p>Time {$_SESSION['cart']['screening']['time']}</p>";
+						echo "<p>Day {"$_SESSION['cart']['screening']['day']"}</p>";
+					}
+			?>
+				}
 		</div>
 
     	
