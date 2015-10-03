@@ -2,11 +2,6 @@
 session_start(); 
 ?>
 
-<?php 
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include("head.php"); ?>
@@ -52,7 +47,7 @@ session_start();
 					</div>
 					<div id="right-side">
 						<label for="movies">Movie</label>
-						<select name="movie-name" id="movies" required>
+						<select name="movie_name" id="movies" required>
 						<option value="">Select a movie</option>
 						<option value="Iron Man">Iron Man</option>	
 						<option value="Mao's Last Dancer">Mao's Last Dancer</option>

@@ -1,33 +1,10 @@
 <?php
 	session_start();
 
-	echo "<pre>";
-	var_dump($_POST);
-	echo "</pre>";
-
-	$offPeakPriceList = array(
-
-		'SA' => 12.00,
-		'SP' => 10.00,
-		'SC' => 8.00,
-		'FA' => 25.00,
-		'FC' => 20.00,
-		'B1' => 20.00,
-		'B2' => 20.00,
-		'B3' => 20.00
-	);
-
-	$peakPriceList = array(
-
-		'SA' => 18.00,
-		'SP' => 15.00,
-		'SC' => 12.00,
-		'FA' => 30.00,
-		'FC' => 25.00,
-		'B1' => 30.00,
-		'B2' => 30.00,
-		'B3' => 30.00
-	);
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// UNCOMMENT TO DEBUG POST
 
 	$ticketNames = array(
 
@@ -43,8 +20,32 @@
 
 	function getPrice($day, $time, $key)
 	{
-		if(($day == 'Monday' ||'Tuesday') || $time == '1 PM')
-		{
+		$offPeakPriceList = array(
+
+		'SA' => 12.00,
+		'SP' => 10.00,
+		'SC' => 8.00,
+		'FA' => 25.00,
+		'FC' => 20.00,
+		'B1' => 20.00,
+		'B2' => 20.00,
+		'B3' => 20.00
+		);
+
+		$peakPriceList = array(
+
+		'SA' => 18.00,
+		'SP' => 15.00,
+		'SC' => 12.00,
+		'FA' => 30.00,
+		'FC' => 25.00,
+		'B1' => 30.00,
+		'B2' => 30.00,
+		'B3' => 30.00
+		);
+
+		if(($day == 'Monday'||$day == 'Tuesday') || $time == '1 PM')
+		{	
 			return $offPeakPriceList[$key];
 		}
 		else
@@ -53,65 +54,84 @@
 		}
 	}
 
-	foreach($_POST['ticket'] as $key => $value)
+	function getTotal($price, $quantity)
 	{
-		if($value > 0)
-		{
-			$tickets[] = array(
-				'ticket-type' => $ticketNames[$key],
-				'price' => getPrice($_POST['day'], $_POST['time'], $key),
-				'qty' => $value,
-				'total' => 0.00
-			);
-		}
+		return $price * $quantity;
 	}
 
-	$_SESSION['cart']['screening'][] = array(
+	if(isset($_POST['ticket']) && isset($_POST['day']) && isset($_POST['time']) && isset($_POST['movie_name']))
+	{
+		foreach($_POST['ticket'] as $key => $value)
+		{
+			$day = $_POST['day'];
+			$time = $_POST['time'];
+			if($value > 0)
+			{
+				$tickets[] = array(
+					'ticket_type' => $ticketNames[$key],
+					'price' => getPrice($day, $time, $key),
+					'qty' => $value,
+					'total' => getTotal(getPrice($day, $time, $key),$value)
+				);
+			}
+		}
+	
+		$_SESSION['cart']['screening'][] = array(
 
-		'movie-name' => $_POST['movie-name'],
-		'day' => $_POST['day'],
-		'time' => $_POST['time'],
-		'tickets' => $tickets
+			'movie_name' => $_POST['movie_name'],
+			'day' => $_POST['day'],
+			'time' => $_POST['time'],
+			'tickets' => $tickets
 
-	);
+		);
+	}	
 
-	echo "<pre>";
-	var_dump($_SESSION);
-	echo "</pre>";
+	// echo "<pre>";
+	// var_dump($_SESSION);
+	// echo "</pre>";
+	// UNCOMMENT TO DEBUG SESSION
 	
 ?>
 
 <!doctype html>
 <html lang="en">
 <?php include("head.php");?>
+<title>Movie Cart</title>
 <body>
 	<div class="content-container">
     	<?php include("header.php");?>
 
-		<div id="">
-			<?php 
-				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+		
+		<?php 
+			for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+			{
+				if(isset($_SESSION['cart']))
 				{
-					if(isset($_SESSION['cart']))
+					echo "<div class='screening'>";
+					echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
+					echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
+					echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
+					readfile("ticket-table.php");
+					
+					foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
 					{
-						echo "<p>Movie name {$_SESSION['cart']['screening'][$i]['movie-name']}</p>";
-						echo "<p>Time {$_SESSION['cart']['screening'][$i]['time']}</p>";
-						echo "<p>Day {$_SESSION['cart']['screening'][$i]['day']}</p>";
+						echo "<tr class='ticket-row'>";
+						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
+						echo "<td class='ticket-data'>$".$ticket['price']."</td>";
+						echo "<td class='ticket-data'><input class='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
+						echo "<td class='ticket-data'>$".$ticket['total']."</td>";
+						echo "</tr>";
 					}
-
-					for($j = 0; $j < count($_SESSION['cart']['screening'][$i]['tickets']); $j++)
-					{
-						if(isset($_SESSION['cart']['screening'][$i]['tickets']))
-						{
-							echo "<p>Ticket Type {$_SESSION['cart']['screening'][$i]['tickets'][$j]['ticket-type']}</p>";
-							echo "<p>Amount {$_SESSION['cart']['screening'][$i]['tickets'][$j]['qty']}</p>";
-						}
-					}
-			
+					echo "</table>";
+					echo "</div>";
 				}
-			?>
+			}
+		?>
+		<div id="buttons">
+			<a href="bookings.php"><button class="button">Book More tickets</button></a>
+			<a href="customer-details.php"><button class="button">Checkout</button></a>
 		</div>
-
+		
     	
     	<?php include("footer.php");?>
     </div>

@@ -724,6 +724,16 @@
             background-color:rgba(236, 254, 254, 0.70);
             color:rgb(17, 43, 73);
         }
+
+        #seatPriceList tr td
+        {
+            padding:10px;
+        }
+
+        #weeklySchedule tr td
+        {
+            padding:10px;
+        }
         
         #weeklySchedule tr th
         {
@@ -750,6 +760,16 @@
         {
             text-align:left;
         }
+
+        #seatPriceList tr:nth-child(odd)
+        {
+            background-color:rgba(115, 160, 170,0.7);
+        }
+
+        #weeklySchedule tr:nth-child(odd)
+        {
+            background-color: rgba(115, 160, 170,0.7);
+        }
         
         #seatPriceList tr td
         {
@@ -765,8 +785,93 @@
         
         #swirlBottom
         {
-            transform:rotateZ(180deg);
+            -webkit-transform:rotateZ(180deg);
+                    transform:rotateZ(180deg);
         }
     
     /*END PRICING PAGE*/
+
+    /*START CART PAGE*/
+        
+        .screening
+        {
+            border:3px solid #F0F0F0;
+            width:95.2%;
+            padding:20px;
+            border-radius:10px;
+            margin: 10px 0;
+            background-color:rgba(236, 254, 254, 0.70);
+            color:rgb(17, 43, 73); 
+        }
+
+        #ticket-table
+        {
+            width:100%;
+            padding:0;
+        }
+
+        #ticket-table tr th
+        {
+            background-color:rgb(35, 57, 100);
+            padding:12px;
+            color:white;
+        }
+
+
+        #ticket-table tr td
+        {
+            text-align: center;
+            padding:10px;
+        }
+
+        #ticket-table tr:nth-child(odd)
+        {
+            background-color:rgba(115, 160, 170,0.7);
+        }
+        
+        #buttons
+        {
+            display:flex;
+            width:100%;
+            justify-content:space-around;
+        }
+
+        #buttons a
+        {
+            width:30%;
+        }
+
+        .button
+        {
+            padding:15px;
+            border-radius: 5px;
+            border: 1px solid #9BADAD;
+            box-shadow: 0 1px 0 #9BADAD;
+            background-color: rgb(236, 254, 254);
+            color:black;
+            font-size: 15px;
+            width:100%;
+
+        }
+
+        .button:active
+        {
+            box-shadow: none;
+            transform: translateY(2px);
+        }
+
+
+
+
+
+    /*END CART PAGE*/
+
+
+
+
+
+
+
+
+
 
