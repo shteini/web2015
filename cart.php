@@ -94,37 +94,40 @@
 <!doctype html>
 <html lang="en">
 <?php include("head.php");?>
-<title>Your Cart</title>
+<title>Movie Cart</title>
 <body>
 	<div class="content-container">
     	<?php include("header.php");?>
 
-		<div id="">
-			<?php 
-				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+		
+		<?php 
+			for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+			{
+				if(isset($_SESSION['cart']))
 				{
-					if(isset($_SESSION['cart']))
+					echo "<div class='screening'>";
+					echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
+					echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
+					echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
+					readfile("ticket-table.php");
+					foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
 					{
-
-						echo"<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
-						echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
-						echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
-						foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
-						{
-							echo "<ul class='ticket'>";
-							echo "<li class='ticket-data'>".$ticket['ticket_type']."</li>";
-							echo "<li class='ticket-data'>".$ticket['price']."</li>";
-							echo "<li class='ticket-data'>".$ticket['qty']."</li>";
-							echo "<li class='ticket-data'>".$ticket['total']."</li>";
-							echo "</ul>";
-						}
+						
+						echo "<tr class='ticket-row'>";
+						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
+						echo "<td class='ticket-data'>".$ticket['price']."</td>";
+						echo "<td class='ticket-data'><input class='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
+						echo "<td class='ticket-data'>".$ticket['total']."</td>";
+						echo "</tr>";
 					}
-
+					echo "</table>";
+					echo "</div>";
 				}
-			?>
-			<a href="bookings.php"><button id="booking-return">Book More tickets</button></a>
-		</div>
 
+			}
+		?>
+		<a href="bookings.php"><button id="booking-return">Book More tickets</button></a>
+		
     	
     	<?php include("footer.php");?>
     </div>
