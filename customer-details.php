@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+	session_destroy();  //REMOVE THIS WHEN TESTING THE SUBMISSION TO NEXT PAGE !!!!
+?>
 
 <!DOCTYPE html>
 <html lang="en">

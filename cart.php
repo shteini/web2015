@@ -117,9 +117,9 @@
 						
 						echo "<tr class='ticket-row'>";
 						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-						echo "<td class='ticket-data'>".$ticket['price']."</td>";
+						echo "<td class='ticket-data'>$".$ticket['price']."</td>";
 						echo "<td class='ticket-data'><input class='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
-						echo "<td class='ticket-data'>".$ticket['total']."</td>";
+						echo "<td class='ticket-data'>$".$ticket['total']."</td>";
 						echo "</tr>";
 					}
 					echo "</table>";
