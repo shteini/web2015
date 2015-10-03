@@ -128,7 +128,10 @@
 
 			}
 		?>
-		<a href="bookings.php"><button id="booking-return">Book More tickets</button></a>
+		<div id="buttons">
+			<a href="bookings.php"><button class="button">Book More tickets</button></a>
+			<a href="customer-details.php"><button class="button">Checkout</button></a>
+		</div>
 		
     	
     	<?php include("footer.php");?>
