@@ -1,9 +1,10 @@
 <?php
 	session_start();
 
-	echo "<pre>";
-	var_dump($_POST);
-	echo "</pre>";
+	// echo "<pre>";
+	// var_dump($_POST);
+	// echo "</pre>";
+	// UNCOMMENT TO DEBUG POST
 
 	$ticketNames = array(
 
@@ -85,9 +86,10 @@
 		);
 	}	
 
-	echo "<pre>";
-	var_dump($_SESSION);
-	echo "</pre>";
+	// echo "<pre>";
+	// var_dump($_SESSION);
+	// echo "</pre>";
+	// UNCOMMENT TO DEBUG SESSION
 	
 ?>
 
