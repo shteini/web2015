@@ -57,7 +57,7 @@
 	{
 		if($value > 0)
 		{
-			$tickets = array(
+			$tickets[] = array(
 				'ticket-type' => $ticketNames[$key],
 				'price' => getPrice($_POST['day'], $_POST['time'], $key),
 				'qty' => $value,
@@ -94,12 +94,22 @@
 				{
 					if(isset($_SESSION['cart']))
 					{
-						echo "<p>Movie name {$_SESSION['cart']['screening']['movie-name']}</p>";
-						echo "<p>Time {$_SESSION['cart']['screening']['time']}</p>";
-						echo "<p>Day {"$_SESSION['cart']['screening']['day']"}</p>";
+						echo "<p>Movie name {$_SESSION['cart']['screening'][$i]['movie-name']}</p>";
+						echo "<p>Time {$_SESSION['cart']['screening'][$i]['time']}</p>";
+						echo "<p>Day {$_SESSION['cart']['screening'][$i]['day']}</p>";
 					}
-			?>
+
+					for($j = 0; $j < count($_SESSION['cart']['screening'][$i]['tickets']); $j++)
+					{
+						if(isset($_SESSION['cart']['screening'][$i]['tickets']))
+						{
+							echo "<p>Ticket Type {$_SESSION['cart']['screening'][$i]['tickets'][$j]['ticket-type']}</p>";
+							echo "<p>Amount {$_SESSION['cart']['screening'][$i]['tickets'][$j]['qty']}</p>";
+						}
+					}
+			
 				}
+			?>
 		</div>
 
     	
