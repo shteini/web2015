@@ -770,3 +770,36 @@
     
     /*END PRICING PAGE*/
 
+    /*START CART PAGE*/
+        #booking-return
+        {
+            padding:15px;
+            border-radius: 5px;
+            border: 1px solid #9BADAD;
+            box-shadow: 0 1px 0 #9BADAD;
+            background-color: rgb(236, 254, 254);
+            width:100px;
+            color:black;
+            font-size: 15px;
+            width:100%;
+        }
+
+        #booking-return:active
+        {
+            box-shadow: none;
+            transform: translateY(2px);
+        }
+
+
+
+    /*END CART PAGE*/
+
+
+
+
+
+
+
+
+
+

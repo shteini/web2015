@@ -58,29 +58,32 @@
 		return $price * $quantity;
 	}
 
-	foreach($_POST['ticket'] as $key => $value)
+	if(isset($_POST['ticket']) && isset($_POST['day']) && isset($_POST['time']) && isset($_POST['movie_name']))
 	{
-		$day = $_POST['day'];
-		$time = $_POST['time'];
-		if($value > 0)
+		foreach($_POST['ticket'] as $key => $value)
 		{
-			$tickets[] = array(
-				'ticket_type' => $ticketNames[$key],
-				'price' => getPrice($day, $time, $key),
-				'qty' => $value,
-				'total' => getTotal(getPrice($day, $time, $key),$value)
-			);
+			$day = $_POST['day'];
+			$time = $_POST['time'];
+			if($value > 0)
+			{
+				$tickets[] = array(
+					'ticket_type' => $ticketNames[$key],
+					'price' => getPrice($day, $time, $key),
+					'qty' => $value,
+					'total' => getTotal(getPrice($day, $time, $key),$value)
+				);
+			}
 		}
-	}
+	
+		$_SESSION['cart']['screening'][] = array(
 
-	$_SESSION['cart']['screening'][] = array(
+			'movie_name' => $_POST['movie_name'],
+			'day' => $_POST['day'],
+			'time' => $_POST['time'],
+			'tickets' => $tickets
 
-		'movie_name' => $_POST['movie_name'],
-		'day' => $_POST['day'],
-		'time' => $_POST['time'],
-		'tickets' => $tickets
-
-	);
+		);
+	}	
 
 	echo "<pre>";
 	var_dump($_SESSION);
@@ -91,6 +94,7 @@
 <!doctype html>
 <html lang="en">
 <?php include("head.php");?>
+<title>Your Cart</title>
 <body>
 	<div class="content-container">
     	<?php include("header.php");?>
@@ -105,9 +109,20 @@
 						echo"<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
 						echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
 						echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
+						foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
+						{
+							echo "<ul class='ticket'>";
+							echo "<li class='ticket-data'>".$ticket['ticket_type']."</li>";
+							echo "<li class='ticket-data'>".$ticket['price']."</li>";
+							echo "<li class='ticket-data'>".$ticket['qty']."</li>";
+							echo "<li class='ticket-data'>".$ticket['total']."</li>";
+							echo "</ul>";
+						}
 					}
+
 				}
 			?>
+			<a href="bookings.php"><button id="booking-return">Book More tickets</button></a>
 		</div>
 
     	
