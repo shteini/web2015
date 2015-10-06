@@ -7,28 +7,28 @@
 <?php include("head.php");?>
 <body>
 	<div class="content-container">
+		<?php include("header.php");?>
 		<div id="contactus-container">
-			<form id="form-content" action="http://titan.csit.rmit.edu.au/~e54061/wp/testcontact.php" method="post">
+			<form id="form-content" action="ticket.php" method="post">
 				
-					<label for="name">Name:</label> 
-					<input id="name" type="text" name="name" pattern= "[A-Za-z]{15}" autofocus="true" required>
+					<label for="name">Name:</label>  <!-- Sorry but this regex doesnt work properly either -->
+					<input id="name" class="customer-details" type="text" name="name" pattern= "[A-Za-z]{15}" autofocus="true" required>
 					<br>
 					<label for="lastname">Lastname:</label> 
-					<input id="lastname" type="text" name="lastname">
+					<input id="lastname" class="customer-details" type="text" name="lastname">
 					<br>
 					<label for="email">Email</label> 
 					<input id="email" type="email" name="email" autofocus="true" required placeholder="example@email.com">
 					<br>
-					<label for ="mobno">Mobile number:</label>
-					<input id="mobno" type="text" name="mobno" patter="((04)|04|+61)([ ]?\d{4})([ ]?\d{4})" title="Australian mobile number required">
- 					<label for="message">Message</label>
-					<textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message here" required></textarea>
+					<label for ="mobno">Mobile number:</label>   <!-- Phone number pattern needs to work with +61 as well, lat digit will not be read at the moment -->
+					<input id="mobno" class="customer-details" type="text" name="mobno" patter="((04)|04|+61)([ ]?\d{4})([ ]?\d{4})" title="Australian mobile number required">
 					<br>
 					<br>
 
 					<input id="submit" type="submit" value="Submit">
 					
 			</form>
+		</div>
 
 		<?php include("footer.php");?>
     </div>
