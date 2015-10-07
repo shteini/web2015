@@ -12,10 +12,10 @@
 			<form id="form-content" action="ticket.php" method="post">
 				
 					<label for="name">Name:</label>
-					<input id="name" class="customer-details" type="text" name="name" pattern= "[A-Za-z]{4-15}" autofocus="true" required>
+					<input id="name" class="customer-details" type="text" name="name" pattern= "[A-Za-z]{15}+?" autofocus="true" required>
 					<br>
 					<label for="lastname">Lastname:</label>
-					<input id="lastname" class="customer-details" type="text" name="lastname" pattern= "[A-Za-z]{4-15}">
+					<input id="lastname" class="customer-details" type="text" name="lastname" pattern= "[A-Za-z]{15}+?">
 					<br>
 					<label for="email">Email:</label> 
 					<input id="email" type="email" name="email" autofocus="true" required placeholder="example@email.com" required>
