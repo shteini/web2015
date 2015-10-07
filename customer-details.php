@@ -24,9 +24,8 @@
 					<input id="mobno" class="customer-details" type="text" name="mobno" patter="((04)|04|+61)([ ]?\d{4})([ ]?\d{4})" title="Australian mobile number required">
 					<br>
 					<br>
-
 					<input id="submit" type="submit" value="Submit">
-					
+					<p>test test test</p>
 			</form>
 		</div>
 
