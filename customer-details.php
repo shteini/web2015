@@ -17,15 +17,15 @@
 					<label for="lastname">Lastname:</label>
 					<input id="lastname" class="customer-details" type="text" name="lastname">
 					<br>
-					<label for="email">Email</label> 
-					<input id="email" type="email" name="email" autofocus="true" required placeholder="example@email.com">
+					<label for="email">Email:</label> 
+					<input id="email" type="email" name="email" autofocus="true" required placeholder="example@email.com" required>
 					<br>
 					<label for ="mobno">Mobile number:</label>
-					<input id="mobno" class="customer-details" type="text" name="mobno" patter="((04)|04|+61)([ ]?\d{4})([ ]?\d{4})" title="Australian mobile number required">
+					<input id="mobno" class="customer-details" type="text" name="mobno" pattern="((04)|04|+61)([ ]?\d{4})([ ]?\d{4})" title="Australian mobile number required" required>
 					<br>
 					<br>
 					<input id="submit" type="submit" value="Submit">
-					<p>test test test</p>
+				
 			</form>
 		</div>
 
