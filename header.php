@@ -10,12 +10,7 @@
 			<li><a href="bookings.php#form-columns">Bookings</a></li>
 			<li><a href="pricing.php">Pricing</a></li>
 			<li><a href="contact-us.php">Contact Us</a></li>
-			<?php 
-				if(isset($_SESSION['cart']))
-				{
-					echo "<li><a href='cart.php'>My Cart</a></li>";
-				}
-			?>
+			<li><a href='cart.php'>My Cart</a></li>
 		</ul>	
 	</nav>
 	<hr>

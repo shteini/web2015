@@ -860,7 +860,11 @@
             transform: translateY(2px);
         }
 
-
+        #grand_total
+        {
+            display: flex;
+            justify-items: right;
+        }
 
 
 

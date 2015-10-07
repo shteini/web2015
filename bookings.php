@@ -11,7 +11,7 @@ session_start();
 	<div class="content-container">
 	<?php include("header.php"); ?>
 
-			<form id="bookings-form" action="cart.php" method="post">
+			<form id="bookings-form" action="cart-session.php" method="post">
 				<div id="form-columns">
 
 				<div id="left-side">
