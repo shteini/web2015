@@ -41,6 +41,7 @@
 			else
 			{
 				echo "<input type='number' name='grand-total' id='grand-total' readonly value='0.00'>";
+				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{1}[a-z]\d{1}]A-Z][-]\d{3}[a-z])$'>";
 
 				echo "<div id='buttons'>";
 					echo "<a href='bookings.php'><button class='button'>Book More tickets</button></a>";
