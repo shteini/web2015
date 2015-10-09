@@ -1,7 +1,7 @@
 <header>
 		<!-- comment -->
 	<div id="logo-container">
-		<a href="index.php"><img id="logo" src="resources/white-crown.png" alt="Silverado Cinemas logo"></a>
+		<a href="index.php"><img id="logo" src="css/resources/white-crown.png" alt="Silverado Cinemas logo"></a>
 		<a href="index.php"><h1 class="logoName">Silverado Cinemas</h1></a>
 	</div>
 	<nav>

@@ -3,19 +3,19 @@
     @font-face
     {
     font-family: FirstFont;
-    src: url("/resources/fonts/Park Lane NF.ttf");
+    src: url("resources/fonts/Park Lane NF.ttf");
     }
     
     @font-face
     {
     font-family: SecondFont;
-    src: url("/resources/fonts/C_BOX.ttf");
+    src: url("resources/fonts/C_BOX.ttf");
     }
     
     @font-face
     {
     font-family: ThirdFont;
-    src: url("/resources/fonts/NightStillComes_mine_final_sample.otf");
+    src: url("resources/fonts/NightStillComes_mine_final_sample.otf");
     }
 
     h1
@@ -28,7 +28,7 @@
     body
     {
         /*background-image: url("/~s3490036/wp/a2/resources/paper.jpg");*/
-        background-image: url("/resources/blue.jpg");
+        background-image: url("resources/blue.jpg");
         background-attachment: fixed;
         background-repeat: no-repeat;
         margin:0;
@@ -193,7 +193,7 @@
     .slick-next::before
     {
         /*content: url("/~s3490036/wp/a2/resources/arrowright.png");*/
-        content: url("/resources/arrowright.png");
+        content: url("resources/arrowright.png");
        
     }
 
@@ -205,7 +205,7 @@
     .slick-prev::before
     {
         /*content: url("/~s3490036/wp/a2/resources/arrowleft.png");*/
-        content: url("/resources/arrowleft.png");
+        content: url("resources/arrowleft.png");
         
     }
 

@@ -9,7 +9,8 @@
     	<?php include("header.php");?>
 
 		
-		<?php 
+		<?php
+			 
 			for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 			{
 				if(isset($_SESSION['cart']))
