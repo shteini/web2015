@@ -22,10 +22,10 @@ session_start();
 
 			<div class="carousel">
 
-				<div><a href="movies.php?#ironman"><img class="carousel-movie" src="css/resources/ironman.jpg" alt="ironman"></a></div>
-				<div><a href="movies.php?#tinkerbell"><img class="carousel-movie" src="css/resources/tinkerbell.jpg" alt="tinkerbell"></a></div>
-				<div><a href="movies.php?#dancer"><img class="carousel-movie" src="css/resources/art.jpg" alt="Mao's Last Dancer"></a></div>
-				<div><a href="movies.php?#proposal"><img class="carousel-movie" src="css/resources/rom-com.jpg" alt="The Proposal"></a></div>
+				<div><a class="carousel-link" href="movies.php?#girlhood"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#insideout"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#trainwreck"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#missionimpossible"><img class="carousel-movie" src="" alt=""></a></div>
 				
 			</div>
 			
@@ -47,8 +47,10 @@ session_start();
 				
 			</div>
 			
+			
+			<script src="js/slick.min.js"></script>
+			<script src="js/main.js"></script>
 			<?php include("footer.php"); ?>
-
 		</div>
 
 	</body>

@@ -15,7 +15,7 @@ session_start();
 		<div id="movies-body-container">
 
 			<ul>
-				<li id="ironman">
+				<li id="girlhood">
 					<div class="movie-item">
 
 						<img class="movie-img" src="" alt="">
@@ -56,7 +56,7 @@ session_start();
 						
 					</div>
 				</li>
-				<li id="tinkerbell">
+				<li id="insideout">
 					<div class="movie-item">
 						<img class="movie-img" src="" alt="">
 						<div class="movie-information">
@@ -106,7 +106,7 @@ session_start();
 				</li>
 				
 
-				<li id="proposal">
+				<li id="trainwreck">
 					<div class="movie-item">
 						<img class="movie-img" src="" alt="">
 						<div class="movie-information">
@@ -155,7 +155,7 @@ session_start();
 				</li>
 				
 
-				<li id="dancer">
+				<li id="missionimpossible">
 					<div class="movie-item">
 
 						<img class="movie-img" src="" alt="">

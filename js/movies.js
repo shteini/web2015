@@ -19,6 +19,8 @@ $(document).ready(function(){
 			$(htmlElement).find(".movie-information").find(".rating").attr("src",rating);
 			$(htmlElement).find(".movie-information").find(".movie-description").html(description);
 
+			// NEED TO DO SESSIONS WITH JSON AS WELL
+
 
 			$(htmlElement).parents("li").find("video").attr("src",this.trailer);
 			i++;
