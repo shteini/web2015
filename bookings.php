@@ -49,10 +49,10 @@ session_start();
 						<label for="movies">Movie</label>
 						<select name="movie_name" id="movies" required>
 						<option value="">Select a movie</option>
-						<option value="Iron Man">Iron Man</option>	
-						<option value="Mao's Last Dancer">Mao's Last Dancer</option>
-						<option value="Tinkerbell">TinkerBell</option>
-						<option value="The Proposal">The Proposal</option>
+						<option value="Girlhood">Girlhood</option>	
+						<option value="Inside Out">Inside Out</option>
+						<option value="Train Wreck">Train Wreck</option>
+						<option value="Mission Impossible">Mission Impossible: Rogue Nation</option>
 						</select>
 						<br>
 

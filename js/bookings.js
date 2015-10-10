@@ -72,15 +72,15 @@ function getMovieGenre(currentMovie)
 {
 	switch(currentMovie)
 	{
-		case 'iron man': return 'AC';
+		case "mission impossible": return 'AC';
 						 break;
-		case "mao's last dancer": return 'AF';
+		case "girlhood": return 'AF';
 								 break;
 								 
-		case "tinkerbell": return 'CH';
+		case "inside out": return 'CH';
 						   break;
 						   
-		case "the proposal": return 'RC';
+		case "train wreck": return 'RC';
 							 break;
 	}
 }
