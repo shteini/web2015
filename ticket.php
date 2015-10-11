@@ -2,7 +2,7 @@
 
 session_start(); 
 	ob_start();
-	
+
 	$customerDetails = array(
 	'firstName' => $_POST['name'],
 	'lastName' => $_POST['lastname'],
@@ -25,6 +25,7 @@ session_start();
 			echo "<h2>".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']. "</h2>";
 			echo "<h2>".$_SESSION['customer_details']['email']."</h2>";
 			echo "<h2>".$_SESSION['customer_details']['phone']."</h2>";
+			echo "<h2>Total cost: $".$_SESSION['grandTotal'];
 
 			if(isset($_SESSION['cart']))
 			{

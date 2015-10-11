@@ -1,12 +1,12 @@
 <?php session_start();
-/* UNCOMMENT TO DEBUG POST DATA
+/*UNCOMMENT TO DEBUG POST DATA
 var_dump($_SESSION['cart']);
 echo "<br> <br>";
 echo "BEFORE";
-var_dump($_SESSION['testTicketBefore']);
+var_dump($_SESSION['ticketTotalBefore']);
 echo "<br> <br>";
 echo "AFTER";
-var_dump($_SESSION['testTicketAfter']);
+var_dump($_SESSION['ticketTotalAfter']);
 echo "<br> <br>";
 echo "POSTED DATA";
 var_dump($_SESSION['postedData']);*/
@@ -26,7 +26,6 @@ var_dump($_SESSION['postedData']);*/
 			 
 			if(isset($_SESSION['cart']))
 			{
-				$grandTotal = 0;
 				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 				{
 					
@@ -44,12 +43,11 @@ var_dump($_SESSION['postedData']);*/
 						echo "<td class='ticket-data'><input class='qty' name='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
 						echo "<td class='ticket-data'>$<input class='sub-total' name='subtotal' type='number' min='0' readonly value='".$ticket['total']."'</td>";
 						echo "</tr>";
-						$grandTotal += $ticket['total'];
 					}
 					echo "</table>";
 					echo "</div>";		
 				}
-				$_SESSION['grandTotal'] = floatval($grandTotal);
+
 				echo "<input type='number' name='grandtotal' id='grand-total' readonly value='".$_SESSION['grandTotal']."'>";
 				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{1}[a-z]\d{1}]A-Z][-]\d{3}[a-z])$'>";
 

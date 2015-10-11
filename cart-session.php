@@ -84,15 +84,16 @@
 			'tickets' => $tickets
 
 		);
-
+		$grandTotal = 0;
 		for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 		{
 			
 			foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
 			{
-				$_SESSION['grandTotal']+=$ticket['total'];
+				$grandTotal+=$ticket['total'];
 			}
 		}
+		$_SESSION['grandTotal'] = $grandTotal;
 	}	
 
 	// echo "<pre>";
