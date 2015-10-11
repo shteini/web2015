@@ -1,6 +1,6 @@
 <?php session_start();
 /*UNCOMMENT TO DEBUG POST DATA
-var_dump($_SESSION['cart']);
+var_dump($_SESSION['cart']['screening']);
 echo "<br> <br>";
 echo "BEFORE";
 var_dump($_SESSION['ticketTotalBefore']);
@@ -9,8 +9,8 @@ echo "AFTER";
 var_dump($_SESSION['ticketTotalAfter']);
 echo "<br> <br>";
 echo "POSTED DATA";
-var_dump($_SESSION['postedData']);*/
-$pageTitle = "My Cart";
+var_dump($_SESSION['postedData']);
+$pageTitle = "My Cart";*/
 ?>
 
 <!doctype html>
@@ -23,15 +23,15 @@ $pageTitle = "My Cart";
 		
 		<?php
 			 
-			if(isset($_SESSION['cart']))
+			if(isset($_SESSION['cart']) && !empty($_SESSION['cart']['screening']))
 			{
 				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 				{
 					
 					echo "<div class='screening'>";
-					echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
-					echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
-					echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
+					echo "<p>Movie:- " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
+					echo "<p>Time:- " .$_SESSION['cart']['screening'][$i]['time']."</p>";
+					echo "<p>Day:- " .$_SESSION['cart']['screening'][$i]['day']."</p>";
 					readfile("ticket-table.php");
 					
 					foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
@@ -44,11 +44,16 @@ $pageTitle = "My Cart";
 						echo "</tr>";
 					}
 					echo "</table>";
+					echo "<div class='remove-button-label'><label>Remove</label><button name='".$i."' class='delete-screening'>X</button></div>";
 					echo "</div>";		
 				}
 
-				echo "<input type='number' name='grandtotal' id='grand-total' readonly value='".$_SESSION['grandTotal']."'>";
+				echo "<div id='voucher-grand-total'>";
+				echo "<label for='voucher'>Voucher</label>";
 				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{1}[a-z]\d{1}]A-Z][-]\d{3}[a-z])$'>";
+				echo "<label for='grandtotal'>Total:$</label>";
+				echo "<input type='number' name='grandtotal' id='grand-total' readonly value='".$_SESSION['grandTotal']."'>";
+				echo "</div>";
 
 				echo "<div id='buttons'>";
 				echo "<a href='bookings.php'><button class='button'>Book More tickets</button></a>";
@@ -58,7 +63,7 @@ $pageTitle = "My Cart";
 			}
 			else
 			{
-				echo "<h2>Your cart is empty</h2>";
+				echo "<h2 id='empty'>Your cart is empty</h2>";
 			}
 		?>
 		
