@@ -10,13 +10,12 @@ var_dump($_SESSION['ticketTotalAfter']);
 echo "<br> <br>";
 echo "POSTED DATA";
 var_dump($_SESSION['postedData']);*/
-
+$pageTitle = "My Cart";
 ?>
 
 <!doctype html>
 <html lang="en">
 <?php include("head.php");?>
-<title>Movie Cart</title>
 <body>
 	<div class="content-container">
     	<?php include("header.php");?>

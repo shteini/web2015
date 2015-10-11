@@ -11,6 +11,7 @@ session_start();
 	);
 
 	$_SESSION['customer_details'] = $customerDetails;
+	$pageTitle = "Your Ticket";
 
 ?>
 

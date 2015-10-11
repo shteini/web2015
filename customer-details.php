@@ -1,5 +1,5 @@
 <?php session_start(); 
-
+$pageTitle = "Customer Details";
 ?>
 
 <!DOCTYPE html>

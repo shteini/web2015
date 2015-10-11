@@ -1,5 +1,6 @@
 <?php 
 session_start(); 
+$pageTitle = "Now Showing";
 ?>
 
 <!DOCTYPE html>

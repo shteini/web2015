@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$pageTitle = "Make a Booking"
 ?>
 
 <!DOCTYPE html>
@@ -55,15 +56,12 @@ session_start();
 						<option value="Mission Impossible: Rogue Nation">Mission Impossible: Rogue Nation</option>
 						</select>
 						<br>
-
-						<label for="movietype">Movie Type</label>
-						<select name="movie" id="movietype">
+						<select name="movie" id="movietype" hidden>
 						<option value="AC">Action Movie</option>	
 						<option value="CH">Children's Movie</option>
 						<option value="AF">Art / Foreign Movie</option>
 						<option value="RC">Romantic Comedy Movie</option>
 						</select>
-						<br>
 
 						<label for="bookingday">Day</label>
 						<select name="day" id="day" required>
