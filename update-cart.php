@@ -22,6 +22,7 @@
 				//$_SESSION['ticketTotalAfter'] = $_SESSION['cart']['screening'][$i]['tickets'][$j]['total'];
 			}		
 		}
+		
 		$grandTotal = 0;
 		for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 		{

@@ -84,6 +84,7 @@
 			'tickets' => $tickets
 
 		);
+		
 		$grandTotal = 0;
 		for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 		{

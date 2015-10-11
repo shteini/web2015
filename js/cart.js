@@ -50,4 +50,25 @@ $(document).ready(function() {
 			});
 	})
 
+
+	$(".delete-screening").click(function(){
+		var screening = $(this).attr('name');
+		$(this).parents(".screening").fadeOut("slow","swing",function(){
+			$(this).parents(".screening").remove();
+			$.post("delete-screening.php",{'idToRemove':JSON.stringify(screening)})
+			$('.sub-total').trigger("change");
+		});
+
+
+	})
+
+
+
+
+
+
+
+
+
+
 })
