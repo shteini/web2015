@@ -72,7 +72,7 @@ function getMovieGenre(currentMovie)
 {
 	switch(currentMovie)
 	{
-		case "mission impossible": return 'AC';
+		case "mission impossible: rogue nation": return 'AC';
 						 break;
 		case "girlhood": return 'AF';
 								 break;
@@ -261,6 +261,7 @@ function getUrlVariable(variable)
 function insertSpace(name)
 {
 	name = name.replace(/_/g," ");
+	name = name.replace(/%20/g," ");
 	name = name.replace(/%27/g,"'");
 	return name;
 }

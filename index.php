@@ -22,10 +22,10 @@ session_start();
 
 			<div class="carousel">
 
-				<div><a class="carousel-link" href="movies.php?#girlhood"><img class="carousel-movie" src="" alt=""></a></div>
-				<div><a class="carousel-link" href="movies.php?#insideout"><img class="carousel-movie" src="" alt=""></a></div>
-				<div><a class="carousel-link" href="movies.php?#trainwreck"><img class="carousel-movie" src="" alt=""></a></div>
-				<div><a class="carousel-link" href="movies.php?#missionimpossible"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#AF"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#CH"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#RC"><img class="carousel-movie" src="" alt=""></a></div>
+				<div><a class="carousel-link" href="movies.php?#AC"><img class="carousel-movie" src="" alt=""></a></div>
 				
 			</div>
 			
