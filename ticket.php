@@ -2,9 +2,7 @@
 
 session_start(); 
 	ob_start();
-
-	// ADD POST DATA TO SESSION I.E. NAME EMAIL & PHONENUMBER
-
+	
 	$customerDetails = array(
 	'firstName' => $_POST['name'],
 	'lastName' => $_POST['lastname'],
@@ -28,10 +26,11 @@ session_start();
 			echo "<h2>".$_SESSION['customer_details']['email']."</h2>";
 			echo "<h2>".$_SESSION['customer_details']['phone']."</h2>";
 
-			for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+			if(isset($_SESSION['cart']))
 			{
-				if(isset($_SESSION['cart']))
+				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 				{
+				
 					echo "<div class='screening'>";
 					echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
 					echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
@@ -49,6 +48,7 @@ session_start();
 					}
 					echo "</table>";
 					echo "</div>";		
+					
 				}
 			}
 		?>

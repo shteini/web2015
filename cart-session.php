@@ -84,6 +84,15 @@
 			'tickets' => $tickets
 
 		);
+
+		for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
+		{
+			
+			foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
+			{
+				$_SESSION['grandTotal']+=$ticket['total'];
+			}
+		}
 	}	
 
 	// echo "<pre>";

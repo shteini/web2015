@@ -804,13 +804,13 @@
             color:rgb(17, 43, 73); 
         }
 
-        #ticket-table
+        .ticket-table
         {
             width:100%;
             padding:0;
         }
 
-        #ticket-table tr th
+        .ticket-table tr th
         {
             background-color:rgb(35, 57, 100);
             padding:12px;
@@ -818,13 +818,13 @@
         }
 
 
-        #ticket-table tr td
+        .ticket-table tr td
         {
             text-align: center;
             padding:10px;
         }
 
-        #ticket-table tr:nth-child(odd)
+        .ticket-table tr:nth-child(odd)
         {
             background-color:rgba(115, 160, 170,0.7);
         }
