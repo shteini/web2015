@@ -50,7 +50,8 @@ $pageTitle = "My Cart";*/
 
 				echo "<div id='voucher-grand-total'>";
 				echo "<label for='voucher'>Voucher</label>";
-				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{1}[a-z]\d{1}]A-Z][-]\d{3}[a-z])$'>";
+				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{4})[-](\d{4})[-]([A-Z][{2})$'>";
+				echo "<p id='status'></p>";
 				echo "<label for='grandtotal'>Total:$</label>";
 				echo "<input type='number' name='grandtotal' id='grand-total' readonly value='".$_SESSION['grandTotal']."'>";
 				echo "</div>";
