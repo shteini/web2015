@@ -43,16 +43,18 @@ session_start();
 					{
 						echo "<tr class='ticket-row'>";
 						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-						echo "<td class='ticket-data'>$<input class='ticket-price' type='number' min='0' readonly value='".$ticket['price']."'</td>";
-						echo "<td class='ticket-data'><input class='qty' name='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
-						echo "<td class='ticket-data'>$<input class='sub-total' type='number' min='0' readonly value='".$ticket['total']."'</td>";
+						echo "<td class='ticket-data'>$".$ticket['price']."</td>";
+						echo "<td class='ticket-data'>".$ticket['qty']."</td>";
+						echo "<td class='ticket-data'>$".$ticket['total']."</td>";
 						echo "</tr>";
 					}
 					echo "</table>";
 					echo "</div>";		
 					
+
 				}
 			}
+
 		?>
 		<a href='index.php'><button class='button'>Home</button></a>
 		<!-- If time provided go to www.neocotic.com/qr.js/ to use qr codes :-) -->
@@ -61,6 +63,7 @@ session_start();
 
 <?php 
 	file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+	unset($_SESSION);
 	session_destroy();
  ?>
 
