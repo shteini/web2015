@@ -80,7 +80,7 @@ session_start();
 					}
 				}		
 			}
-			file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+			file_put_contents("~/public_html/wp/a3/saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
 			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
 			ob_start();
 		}
