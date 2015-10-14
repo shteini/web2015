@@ -13,40 +13,80 @@
 <body>
 
 	<div id="ticket-container">
-		<div id='booking-details'><h2>Customer Name:<span> sammmmmmmmmmmmm Morrison</span></h2><h2>Email:<span> sammorrison2@me.com</span></h2><h2>Phone No#:<span> 0404088136</span></h2><h2>Total cost: <span>$20</span></h2></div><div class='cardWrap'>
-  							<div class='card cardLeft'>
-					    		<h1>Silverado <span>Cinema</span></h1>
-					    		<div class='title'>
-					      			<h2>Train Wreck</h2>
-					      			<span>movie</span>
-					    		</div>
-					    		<div class='name'>
-					      			<h2>sammmmmmmmmmmmm Morrison</h2>
-					      			<span>name</span>
-					    		</div>
-					    		<div class='seat'>
-					      			<h2>Tuesday</h2>
-					      			<span>day</span>
-					    		</div>
-					    		<div class='time'>
-					      			<h2>9 PM</h2>
-					      			<span>time</span>
-					    		</div>
-					    
-					  		</div>
-					  		<div class='card cardRight'>
-					    	<div class='eye'></div>
-					    	<div class='number'>
-					      		<h3>SP</h3>
-					      		<span>type</span>
-					    	</div>
-					    	<div class='barcode'></div>
-					  		</div>
-						</div>		<!-- If time provided go to www.neocotic.com/qr.js/ to use qr codes :-) -->
+		<div id='booking-details'><h2>Customer Name:<span> Sam Morrison</span></h2><h2>Email:<span> sammorrison2@me.com</span></h2><h2>Phone No#:<span> 0404088136</span></h2><h2>Total cost: <span>$51</span></h2></div><div class='cardWrap'>
+	  							<div class='card cardLeft'>
+						    		<h1>Silverado <span>Cinema</span></h1>
+						    		<div class='title'>
+						      			<h2>Inside Out</h2>
+						      			<span>movie</span>
+						    		</div>
+						    		<div class='name'>
+						      			<h2>Sam Morrison</h2>
+						      			<span>name</span>
+						    		</div>
+						    		<div class='seat'>
+						      			<h2>Thursday</h2>
+						      			<span>day</span>
+						    		</div>
+						    		<div class='time'>
+						      			<h2>6 PM</h2>
+						      			<span>time</span>
+						    		</div>
+						  		</div>
+						  		<div class='card cardRight'>
+						    	<div class='eye'></div>
+						    	<div class='number'>
+						      		<h3>SA</h3>
+						      		<span>type</span>
+						    	</div>
+						    	<div class='barcode'></div>
+						  		</div>
+							 </div><div class='cardWrap'>
+	  							<div class='card cardLeft'>
+						    		<h1>Silverado <span>Cinema</span></h1>
+						    		<div class='title'>
+						      			<h2>Inside Out</h2>
+						      			<span>movie</span>
+						    		</div>
+						    		<div class='name'>
+						      			<h2>Sam Morrison</h2>
+						      			<span>name</span>
+						    		</div>
+						    		<div class='seat'>
+						      			<h2>Thursday</h2>
+						      			<span>day</span>
+						    		</div>
+						    		<div class='time'>
+						      			<h2>6 PM</h2>
+						      			<span>time</span>
+						    		</div>
+						  		</div>
+						  		<div class='card cardRight'>
+						    	<div class='eye'></div>
+						    	<div class='number'>
+						      		<h3>SP</h3>
+						      		<span>type</span>
+						    	</div>
+						    	<div class='barcode'></div>
+						  		</div>
+							 </div>		<!-- If time provided go to www.neocotic.com/qr.js/ to use qr codes :-) -->
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="js/jquery.qrcode-0.12.0.min.js"></script>
-	<script src="js/ticket.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			var url = "~/public_html/wp/a3/saved/sammorrison2@me.com.html";
+			$(".barcode").qrcode({
+			"render":"div",
+			"size": 80,
+		    "color": "#3a3",
+		    "text": url,
+			});
+		})
+
+	</script>
+
 </body>
 </html>
 

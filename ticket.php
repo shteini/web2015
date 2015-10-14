@@ -44,57 +44,41 @@ session_start();
 			
 			for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 			{
-			
-				// echo "<div class='screening'>";
-				// echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
-				// echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
-				// echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
-				// readfile("ticket-table.php");
 				foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
 				{
 					if($ticket['total'] > 0)
 					{
-						// echo "<tr class='ticket-row'>";
-						// echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-						// echo "<td class='ticket-data'>$".$ticket['price']."</td>";
-						// echo "<td class='ticket-data'>".$ticket['qty']."</td>";
-						// echo "<td class='ticket-data'>$".$ticket['total']."</td>";
-						// echo "</tr>";
 						echo "<div class='cardWrap'>
-  							<div class='card cardLeft'>
-					    		<h1>Silverado <span>Cinema</span></h1>
-					    		<div class='title'>
-					      			<h2>".$_SESSION['cart']['screening'][$i]['movie_name']."</h2>
-					      			<span>movie</span>
-					    		</div>
-					    		<div class='name'>
-					      			<h2>".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']."</h2>
-					      			<span>name</span>
-					    		</div>
-					    		<div class='seat'>
-					      			<h2>".$_SESSION['cart']['screening'][$i]['day']."</h2>
-					      			<span>day</span>
-					    		</div>
-					    		<div class='time'>
-					      			<h2>".$_SESSION['cart']['screening'][$i]['time']."</h2>
-					      			<span>time</span>
-					    		</div>
-					    
-					  		</div>
-					  		<div class='card cardRight'>
-					    	<div class='eye'></div>
-					    	<div class='number'>
-					      		<h3>".$ticket['key']."</h3>
-					      		<span>type</span>
-					    	</div>
-					    	<div class='barcode'></div>
-					  		</div>
-						</div>";
-
+	  							<div class='card cardLeft'>
+						    		<h1>Silverado <span>Cinema</span></h1>
+						    		<div class='title'>
+						      			<h2>".$_SESSION['cart']['screening'][$i]['movie_name']."</h2>
+						      			<span>movie</span>
+						    		</div>
+						    		<div class='name'>
+						      			<h2>".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']."</h2>
+						      			<span>name</span>
+						    		</div>
+						    		<div class='seat'>
+						      			<h2>".$_SESSION['cart']['screening'][$i]['day']."</h2>
+						      			<span>day</span>
+						    		</div>
+						    		<div class='time'>
+						      			<h2>".$_SESSION['cart']['screening'][$i]['time']."</h2>
+						      			<span>time</span>
+						    		</div>
+						  		</div>
+						  		<div class='card cardRight'>
+						    	<div class='eye'></div>
+						    	<div class='number'>
+						      		<h3>".$ticket['key']."</h3>
+						      		<span>type</span>
+						    	</div>
+						    	<div class='barcode'></div>
+						  		</div>
+							 </div>";
 					}
-				}
-				// echo "</table>";
-				// echo "</div>";		
+				}		
 			}
 			file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
 			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
@@ -116,16 +100,13 @@ session_start();
 	<script>
 		$(document).ready(function(){
 
-			var url = "/~s3490036/wp/a3/saved/".$_SESSION['customer_details']['email'].".html";
-			ticketUrl+= "saved/ti"
+			var url = "~/public_html/wp/a3/saved/<?php echo $_SESSION['customer_details']['email'];?>.html";
 			$(".barcode").qrcode({
 			"render":"div",
 			"size": 80,
 		    "color": "#3a3",
 		    "text": url,
 			});
-
-
 		})
 
 	</script>
