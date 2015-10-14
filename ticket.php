@@ -113,7 +113,23 @@ session_start();
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="js/jquery.qrcode-0.12.0.min.js"></script>
-	<script src="js/ticket.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			var url = "/~s3490036/wp/a3/saved/".$_SESSION['customer_details']['email'].".html";
+			ticketUrl+= "saved/ti"
+			$(".barcode").qrcode({
+			"render":"div",
+			"size": 80,
+		    "color": "#3a3",
+		    "text": url,
+			});
+
+
+		})
+
+	</script>
+
 </body>
 </html>
 

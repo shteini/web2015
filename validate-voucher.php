@@ -14,22 +14,25 @@
         $part2 = isset($voucher[1]) ? $voucher[1] : null;
         $part3 = isset($voucher[2]) ? $voucher[2] : null;
         
-        
-        $check1=(($part1[0]*$part1[1]+$part1[2])*$part1[3]+$part1[4])%26;
-        $check2=(($part2[0]*$part2[1]+$part2[2])*$part2[3]+$part2[4])%26;
-        
-        if($check1 == (ord($part3[0])-65) && $check2 == (ord($part3[1])-65))
+        if(isset($part1) && isset($part2) && isset($part3))
         {
-            $_SESSION['voucher'] = $preservedVoucher;
-            $_SESSION['discountPrice'] = $_SESSION['grandTotal'] - ($_SESSION['grandTotal'] * 0.20); 
-            echo "Valid Voucher<br>","Your Previous total was: $",$_SESSION['grandTotal'],
-            "<br>Your new discounted total is: $",$_SESSION['discountPrice'];
-
-
+            $check1=(($part1[0]*$part1[1]+$part1[2])*$part1[3]+$part1[4])%26;
+            $check2=(($part2[0]*$part2[1]+$part2[2])*$part2[3]+$part2[4])%26;
         }
-        else
+
+        if(isset($check1) && isset($check2))
         {
-            echo "Voucher Not Valid";    
+            if($check1 == (ord($part3[0])-65) && $check2 == (ord($part3[1])-65))
+            {
+                $_SESSION['voucher'] = $preservedVoucher;
+                $_SESSION['discountPrice'] = $_SESSION['grandTotal'] - ($_SESSION['grandTotal'] * 0.20); 
+                echo "Valid Voucher<br>","Your Previous total was: $",$_SESSION['grandTotal'],
+                "<br>Your new discounted total is: $",$_SESSION['discountPrice'];
+            }
+            else
+            {
+                echo "Voucher Not Valid";    
+            }
         }
         
         
