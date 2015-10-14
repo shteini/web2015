@@ -1,9 +1,10 @@
 <?php
+    session_start();
 
-    echo "TESTING";
     if(isset($_POST['voucher']))
     {
         $voucher = $_POST['voucher'];
+        $preservedVoucher = $voucher;
         
         // Look up the explode function, you're close but it wont return every individual character.
         // Think about what you are trying to do, you are splitting by '-' what do you think that would return??
@@ -19,12 +20,16 @@
         
         if($check1 == (ord($part3[0])-65) && $check2 == (ord($part3[1])-65))
         {
-            $_SESSION['discountPrice'] = $_SESSION['grandTotal'] * .20; 
-            echo "valid";
+            $_SESSION['voucher'] = $preservedVoucher;
+            $_SESSION['discountPrice'] = $_SESSION['grandTotal'] - ($_SESSION['grandTotal'] * 0.20); 
+            echo "Valid Voucher<br>","Your Previous total was: $",$_SESSION['grandTotal'],
+            "<br>Your new discounted total is: $",$_SESSION['discountPrice'];
+
+
         }
         else
         {
-            echo "NOT VALID";    
+            echo "Voucher Not Valid";    
         }
         
         

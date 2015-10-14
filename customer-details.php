@@ -1,5 +1,7 @@
 <?php session_start(); 
 $pageTitle = "Customer Details";
+var_dump($_SESSION);
+
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +11,7 @@ $pageTitle = "Customer Details";
 	<div class="content-container">
 		<?php include("header.php");?>
 		<div id="contactus-container">
-			<form id="form-content" action="ticket.php" method="post">
+			<form id="customer-details-form" action="ticket.php" method="post">
 				
 					<label for="name">Name:</label>
 					<input id="name" class="customer-details" type="text" name="name" pattern= "[A-Za-z].{3,}" autofocus="true" required>
@@ -28,8 +30,8 @@ $pageTitle = "Customer Details";
 				
 			</form>
 
-			<div id="map">
-				<label for='voucher'>Voucher</label>
+			<div id="voucher-details">
+				<label for='voucher'>Voucher:</label>
 				<input type='text' name='voucher' id='voucher' pattern='^(\d{5})[-](\d{5})[-]([A-Z][{2})$'>
 				<p id='status'></p>
 			</div>
