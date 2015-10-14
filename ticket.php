@@ -3,13 +3,16 @@
 session_start(); 
 	ob_start();
 
-	$customerDetails = array(
-	'firstName' => $_POST['name'],
-	'lastName' => $_POST['lastname'],
-	'email' => $_POST['email'],
-	'phone' => $_POST['mobno']
-	);
-
+	if(isset($_POST))
+	{
+		$customerDetails = array(
+		'firstName' => $_POST['name'],
+		'lastName' => $_POST['lastname'],
+		'email' => $_POST['email'],
+		'phone' => $_POST['mobno']
+		);
+	}
+	
 	$_SESSION['customer_details'] = $customerDetails;
 	$pageTitle = "Your Ticket";
 
@@ -80,7 +83,7 @@ session_start();
 					}
 				}		
 			}
-			file_put_contents("~/public_html/wp/a3/saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+			file_put_contents("".$_SESSION['customer_details']['email'].".html", ob_get_contents());
 			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
 			ob_start();
 		}
