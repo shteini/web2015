@@ -1,5 +1,6 @@
 <?php session_start();
-/*UNCOMMENT TO DEBUG POST DATA
+//UNCOMMENT TO DEBUG POST DATA
+/*
 var_dump($_SESSION['cart']['screening']);
 echo "<br> <br>";
 echo "BEFORE";
@@ -9,8 +10,8 @@ echo "AFTER";
 var_dump($_SESSION['ticketTotalAfter']);
 echo "<br> <br>";
 echo "POSTED DATA";
-var_dump($_SESSION['postedData']);
-$pageTitle = "My Cart";*/
+var_dump($_SESSION['postedData']);*/
+$pageTitle = "My Cart";
 ?>
 
 <!doctype html>
@@ -44,6 +45,8 @@ $pageTitle = "My Cart";*/
 						echo "</tr>";
 					}
 					echo "</table>";
+					echo "<label for='screeningTotal'>Screening total: $</label>";
+					echo "<input type='number' name='screeningTotal' id='screening-total' min='0' readonly value='".$_SESSION['cart']['screening'][$i]['screening_total']."'>";
 					echo "<div class='remove-button-label'><label>Remove</label><button name='".$i."' class='delete-screening'>X</button></div>";
 					echo "</div>";		
 				}
