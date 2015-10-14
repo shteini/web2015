@@ -1,5 +1,4 @@
 <header>
-		<!-- comment -->
 	<div id="logo-container">
 		<a href="index.php"><img id="logo" src="css/resources/white-crown.png" alt="Silverado Cinemas logo"></a>
 		<a href="index.php"><h1 class="logoName">Silverado Cinemas</h1></a>
@@ -15,6 +14,4 @@
 	</nav>
 	<hr>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/main.js"></script>
 </header>

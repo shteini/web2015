@@ -3,8 +3,6 @@
 session_start(); 
 	ob_start();
 
-	// ADD POST DATA TO SESSION I.E. NAME EMAIL & PHONENUMBER
-
 	$customerDetails = array(
 	'firstName' => $_POST['name'],
 	'lastName' => $_POST['lastname'],
@@ -13,6 +11,7 @@ session_start();
 	);
 
 	$_SESSION['customer_details'] = $customerDetails;
+	$pageTitle = "Your Ticket";
 
 ?>
 
@@ -27,28 +26,7 @@ session_start();
 			echo "<h2>".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']. "</h2>";
 			echo "<h2>".$_SESSION['customer_details']['email']."</h2>";
 			echo "<h2>".$_SESSION['customer_details']['phone']."</h2>";
-
-			if(isset($_SESSION['cart']))
-			{	
-				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
-				{
-						echo "<div class='screening'>";
-						echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
-						echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
-						echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
-						readfile("ticket-table.php");
-						
-						foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
-						{
-							echo "<tr class='ticket-row'>";
-							echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-							echo "<td class='ticket-data'>$<input class='ticket-price' type='number' min='0' readonly value='".$ticket['price']."'</td>";
-							echo "<td class='ticket-data'><input class='qty' name='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
-							echo "<td class='ticket-data'>$<input class='sub-total' type='number' min='0' readonly value='".$ticket['total']."'</td>";
-							echo "</tr>";
-						}
-						echo "</table>";
-						echo "</div>";		
+			echo "<h2>Total cost: $".$_SESSION['grandTotal'];
 				}
 			}
 

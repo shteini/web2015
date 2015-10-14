@@ -1,5 +1,6 @@
 <?php 
 session_start(); 
+$pageTitle = "Pricing";
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +67,7 @@ session_start();
 				</p>
 				
 				<div id="swirls">
-					<img id="swirlTop" src="resources/wswirl.png" width="227px" height="78px" alt="swirl"/>
+					<img id="swirlTop" src="css/resources/wswirl.png" width="227px" height="78px" alt="swirl"/>
 				</div>
 				
 				<div class="bigger"><p> Movie Sessions </p></div>

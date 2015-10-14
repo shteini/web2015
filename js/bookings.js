@@ -72,15 +72,15 @@ function getMovieGenre(currentMovie)
 {
 	switch(currentMovie)
 	{
-		case 'iron man': return 'AC';
+		case "mission impossible: rogue nation": return 'AC';
 						 break;
-		case "mao's last dancer": return 'AF';
+		case "girlhood": return 'AF';
 								 break;
 								 
-		case "tinkerbell": return 'CH';
+		case "inside out": return 'CH';
 						   break;
 						   
-		case "the proposal": return 'RC';
+		case "train wreck": return 'RC';
 							 break;
 	}
 }
@@ -261,6 +261,7 @@ function getUrlVariable(variable)
 function insertSpace(name)
 {
 	name = name.replace(/_/g," ");
+	name = name.replace(/%20/g," ");
 	name = name.replace(/%27/g,"'");
 	return name;
 }

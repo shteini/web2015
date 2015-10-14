@@ -1,4 +1,4 @@
-<table id="ticket-table">
+<table class="ticket-table">
 	<tr>
 		<th>Ticket Type</th>
 		<th>Price</th>
