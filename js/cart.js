@@ -41,16 +41,6 @@ $(document).ready(function() {
 
 		$('#grand-total').val(grandTotal.toFixed(2));
 	})
-	
-	$("#voucher").keyup(function(){
-		var voucher = $(this).val();
-		$('#status').html('Checking ...');
-		$.post("validate-voucher.php",{'voucher':voucher})
-		.done(function(result){
-				$("#status").html(result); //Modify this
-			});
-	})
-
 
 	$(".delete-screening").click(function(){
 		var screening = $(this).attr('name');

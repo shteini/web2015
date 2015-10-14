@@ -27,8 +27,14 @@ $pageTitle = "Customer Details";
 					<input id="submit" type="submit" value="Submit">
 				
 			</form>
-		</div>
 
+			<div id="map">
+				<label for='voucher'>Voucher</label>
+				<input type='text' name='voucher' id='voucher' pattern='^(\d{5})[-](\d{5})[-]([A-Z][{2})$'>
+				<p id='status'></p>
+			</div>
+		</div>
+		<script src="js/customer-details.js"></script>
 		<?php include("footer.php");?>
     </div>
 </body>
