@@ -12,7 +12,7 @@ session_start();
 		'phone' => $_POST['mobno']
 		);
 	}
-	
+
 	$_SESSION['customer_details'] = $customerDetails;
 	$pageTitle = "Your Ticket";
 
@@ -83,7 +83,7 @@ session_start();
 					}
 				}		
 			}
-			file_put_contents("".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+			file_put_contents("~/public_html/wp/a3/saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
 			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
 			ob_start();
 		}
@@ -104,6 +104,7 @@ session_start();
 		$(document).ready(function(){
 
 			var url = "~/public_html/wp/a3/saved/<?php echo $_SESSION['customer_details']['email'];?>.html";
+			console.log(url);
 			$(".barcode").qrcode({
 			"render":"div",
 			"size": 80,
@@ -118,7 +119,7 @@ session_start();
 </html>
 
 <?php 
-	file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents(),FILE_APPEND);
+	file_put_contents("~/public_html/wp/a3/saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents(),FILE_APPEND);
 	unset($_SESSION);
 	session_destroy();
  ?>
