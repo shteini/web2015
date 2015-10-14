@@ -10,9 +10,9 @@
         // Think about what you are trying to do, you are splitting by '-' what do you think that would return??
         $voucher = explode("-", $voucher);
         
-        $part1 = $voucher[0];
-        $part2 = $voucher[1];
-        $part3 = $voucher[2];
+        $part1 = isset($voucher[0]) ? $voucher[0] : null;
+        $part2 = isset($voucher[1]) ? $voucher[1] : null;
+        $part3 = isset($voucher[2]) ? $voucher[2] : null;
         
         
         $check1=(($part1[0]*$part1[1]+$part1[2])*$part1[3]+$part1[4])%26;

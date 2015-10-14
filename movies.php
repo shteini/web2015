@@ -132,7 +132,7 @@ $pageTitle = "Now Showing";
 					var screenings = movie.screenings;
 					var sessionContainer = $(li).find(".sessions-container");
 					$.each(screenings, function(key,name){
-						var string = $("<div class='session'><p>"+key+"</p><p><a href='/bookings.php?movie="+movie.title.toLowerCase()+"&day="+key.toLowerCase()+"&time="+name+"'>"+name+"</a></p></div>");
+						var string = $("<div class='session'><p>"+key+"</p><p><a href='bookings.php?movie="+movie.title.toLowerCase()+"&day="+key.toLowerCase()+"&time="+name+"'>"+name+"</a></p></div>");
 						$(sessionContainer).append(string);
 					});
 
