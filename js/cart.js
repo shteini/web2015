@@ -44,9 +44,10 @@ $(document).ready(function() {
 	
 	$("#voucher").keyup(function(){
 		var voucher = $(this).val();
-		$.post("validate-voucher.php",{'voucher':JSON.stringify(voucher)})
+		$('#status').html('Checking ...');
+		$.post("validate-voucher.php",{'voucher':voucher})
 		.done(function(result){
-				$("#voucher").append(result);
+				$("#status").html(result); //Modify this
 			});
 	})
 
