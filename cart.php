@@ -1,58 +1,74 @@
-<?php session_start(); ?>
+<?php session_start();
+/*UNCOMMENT TO DEBUG POST DATA
+var_dump($_SESSION['cart']['screening']);
+echo "<br> <br>";
+echo "BEFORE";
+var_dump($_SESSION['ticketTotalBefore']);
+echo "<br> <br>";
+echo "AFTER";
+var_dump($_SESSION['ticketTotalAfter']);
+echo "<br> <br>";
+echo "POSTED DATA";
+var_dump($_SESSION['postedData']);
+$pageTitle = "My Cart";*/
+?>
 
 <!doctype html>
 <html lang="en">
 <?php include("head.php");?>
-<title>Movie Cart</title>
 <body>
 	<div class="content-container">
     	<?php include("header.php");?>
 
 		
 		<?php
-			if(isset($_SESSION['cart']))
+			 
+			if(isset($_SESSION['cart']) && !empty($_SESSION['cart']['screening']))
 			{
 				for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 				{
-						echo "<div class='screening'>";
-						echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
-						echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
-						echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
-						readfile("ticket-table.php");
-						
-						foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
-						{
-							echo "<tr class='ticket-row'>";
-							echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-							echo "<td class='ticket-data'>$<input class='ticket-price' type='number' min='0' readonly value='".$ticket['price']."'</td>";
-							echo "<td class='ticket-data'><input class='qty' name='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
-							echo "<td class='ticket-data'>$<input class='sub-total' type='number' min='0' readonly value='".$ticket['total']."'</td>";
-							echo "</tr>";
-						}
-						echo "</table>";
-						echo "</div>";		
+					
+					echo "<div class='screening'>";
+					echo "<p>Movie:- " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
+					echo "<p>Time:- " .$_SESSION['cart']['screening'][$i]['time']."</p>";
+					echo "<p>Day:- " .$_SESSION['cart']['screening'][$i]['day']."</p>";
+					readfile("ticket-table.php");
+					
+					foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
+					{
+						echo "<tr class='ticket-row'>";
+						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
+						echo "<td class='ticket-data'>$<input class='ticket-price' type='number' min='0' readonly value='".$ticket['price']."'</td>";
+						echo "<td class='ticket-data'><input class='qty' name='qty' type='number' min='0' value='".$ticket['qty']."'></td>";
+						echo "<td class='ticket-data'>$<input class='sub-total' name='subtotal' type='number' min='0' readonly value='".$ticket['total']."'</td>";
+						echo "</tr>";
+					}
+					echo "</table>";
+					echo "<div class='remove-button-label'><label>Remove</label><button name='".$i."' class='delete-screening'>X</button></div>";
+					echo "</div>";		
 				}
-			}	
 
-			if(!isset($_SESSION['cart']))
-			{
-				echo "<h2>Your cart is empty</h2>";
+				echo "<div id='voucher-grand-total'>";
+				echo "<label for='voucher'>Voucher</label>";
+				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{5})[-](\d{5})[-]([A-Z][{2})$'>";
+				echo "<p id='status'></p>";
+				echo "<label for='grandtotal'>Total:$</label>";
+				echo "<input type='number' name='grandtotal' id='grand-total' readonly value='".$_SESSION['grandTotal']."'>";
+				echo "</div>";
+
+				echo "<div id='buttons'>";
+				echo "<a href='bookings.php'><button class='button'>Book More tickets</button></a>";
+				echo "<a href='customer-details.php'><button class='button'>Checkout</button></a>";
+				echo "</div>";
+				include("footer.php");
 			}
 			else
 			{
-				echo "<input type='number' name='grand-total' id='grand-total' readonly value='0.00'>";
-				echo "<input type='text' name='voucher' id='voucher' pattern='^(\d{1}[a-z]\d{1}]A-Z][-]\d{3}[a-z])$'>";
-
-				echo "<div id='buttons'>";
-					echo "<a href='bookings.php'><button class='button'>Book More tickets</button></a>";
-					echo "<a href='customer-details.php'><button class='button'>Checkout</button></a>";
-					echo "</div>";
+				echo "<h2 id='empty'>Your cart is empty</h2>";
 			}
 		?>
 		
 		<script src="js/cart.js"></script>
-		
-    	<?php include("footer.php");?>
     </div>
 </body>
 </html>
