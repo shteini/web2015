@@ -53,7 +53,7 @@ $pageTitle = "Home";
 			<script>
 			$(document).ready(function(){
 	
-				$.post("https://titan.csit.rmit.edu.au/~e54061/wp/moviesJSON.php",function(data,success){
+				$.post("https://<?php echo $_SERVER['SERVER_NAME'];?>/~e54061/wp/moviesJSON.php",function(data,success){
 
 					var carouselLinks = $(".carousel-link").toArray();
 					var i = 0;
