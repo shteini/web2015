@@ -59,6 +59,17 @@
 		return $price * $quantity;
 	}
 
+	function getScreeningTotal($tickets)
+	{
+		$screeningTotal = 0;
+
+		foreach($tickets as $ticket)
+		{
+			$screeningTotal += $ticket['total'];
+		}
+			return $screeningTotal;
+	}
+
 	if(isset($_POST['ticket']) && isset($_POST['day']) && isset($_POST['time']) && isset($_POST['movie_name']))
 	{
 		foreach($_POST['ticket'] as $key => $value)
@@ -81,7 +92,8 @@
 			'movie_name' => $_POST['movie_name'],
 			'day' => $_POST['day'],
 			'time' => $_POST['time'],
-			'tickets' => $tickets
+			'tickets' => $tickets,
+			'screening_total' => getScreeningTotal($tickets)
 
 		);
 		
