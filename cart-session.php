@@ -82,7 +82,8 @@
 					'ticket_type' => $ticketNames[$key],
 					'price' => getPrice($day, $time, $key),
 					'qty' => $value,
-					'total' => getTotal(getPrice($day, $time, $key),$value)
+					'total' => getTotal(getPrice($day, $time, $key),$value),
+					'key' => $key
 				);
 			}
 		}
