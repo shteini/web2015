@@ -18,48 +18,87 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php include("head.php");?>
+<link rel="stylesheet" type="text/css" href="css/ticket.css">
 <body>
+
+	<div id="ticket-container">
 		<?php 
 		if(isset($_SESSION['cart']))
 		{
-			echo "<h2>".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']. "</h2>";
-			echo "<h2>".$_SESSION['customer_details']['email']."</h2>";
-			echo "<h2>".$_SESSION['customer_details']['phone']."</h2>";
+			echo "<div id='booking-details'>";
+			echo "<h2>Customer Name:<span> ".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']. "</span></h2>";
+			echo "<h2>Email:<span> ".$_SESSION['customer_details']['email']."</span></h2>";
+			echo "<h2>Phone No#:<span> ".$_SESSION['customer_details']['phone']."</span></h2>";
 
 			if(isset($_SESSION['discountPrice']))
 			{
-				echo "<h2>Total cost: $".$_SESSION['discountPrice'];
-				echo "<h2>Voucher applied: ".$_SESSION['voucher'];
+				echo "<h2>Total cost: <span>$".$_SESSION['discountPrice']."</span></h2>";
+				echo "<h2>Voucher applied: <span>".$_SESSION['voucher']."</span></h2>";
+				echo "</div>";
 			}
 			else
 			{
-				echo "<h2>Total cost: $".$_SESSION['grandTotal'];
+				echo "<h2>Total cost: <span>$".$_SESSION['grandTotal']."</span></h2>";
+				echo "</div>";
 			}
 			
 			for($i = 0; $i < count($_SESSION['cart']['screening']); $i++)
 			{
 			
-				echo "<div class='screening'>";
-				echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
-				echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
-				echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
-				readfile("ticket-table.php");
-				
+				// echo "<div class='screening'>";
+				// echo "<p>Movie name " .$_SESSION['cart']['screening'][$i]['movie_name']."</p>";
+				// echo "<p>Time " .$_SESSION['cart']['screening'][$i]['time']."</p>";
+				// echo "<p>Day " .$_SESSION['cart']['screening'][$i]['day']."</p>";
+				// readfile("ticket-table.php");
 				foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
 				{
 					if($ticket['total'] > 0)
 					{
-						echo "<tr class='ticket-row'>";
-						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-						echo "<td class='ticket-data'>$".$ticket['price']."</td>";
-						echo "<td class='ticket-data'>".$ticket['qty']."</td>";
-						echo "<td class='ticket-data'>$".$ticket['total']."</td>";
-						echo "</tr>";
+						// echo "<tr class='ticket-row'>";
+						// echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
+						// echo "<td class='ticket-data'>$".$ticket['price']."</td>";
+						// echo "<td class='ticket-data'>".$ticket['qty']."</td>";
+						// echo "<td class='ticket-data'>$".$ticket['total']."</td>";
+						// echo "</tr>";
+						echo "<div class='cardWrap'>
+  							<div class='card cardLeft'>
+					    		<h1>Silverado <span>Cinema</span></h1>
+					    		<div class='title'>
+					      			<h2>".$_SESSION['cart']['screening'][$i]['movie_name']."</h2>
+					      			<span>movie</span>
+					    		</div>
+					    		<div class='name'>
+					      			<h2>".$_SESSION['customer_details']['firstName']." ".$_SESSION['customer_details']['lastName']."</h2>
+					      			<span>name</span>
+					    		</div>
+					    		<div class='seat'>
+					      			<h2>".$_SESSION['cart']['screening'][$i]['day']."</h2>
+					      			<span>day</span>
+					    		</div>
+					    		<div class='time'>
+					      			<h2>".$_SESSION['cart']['screening'][$i]['time']."</h2>
+					      			<span>time</span>
+					    		</div>
+					    
+					  		</div>
+					  		<div class='card cardRight'>
+					    	<div class='eye'></div>
+					    	<div class='number'>
+					      		<h3>".$ticket['key']."</h3>
+					      		<span>type</span>
+					    	</div>
+					    	<div class='barcode'></div>
+					  		</div>
+						</div>";
+
 					}
 				}
-				echo "</table>";
-				echo "</div>";		
+				// echo "</table>";
+				// echo "</div>";		
 			}
+			file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
+			ob_start();
 		}
 		else
 		{
@@ -69,17 +108,18 @@ session_start();
 			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
 			echo "</div>";
 		}
-		file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
-		echo "<a href='index.php'><button id='go-home'>Home</button></a>";
-		ob_start();
 		?>
 		<!-- If time provided go to www.neocotic.com/qr.js/ to use qr codes :-) -->
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.qrcode-0.12.0.min.js"></script>
+	<script src="js/ticket.js"></script>
 </body>
 </html>
 
 <?php 
 	file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents(),FILE_APPEND);
-	unset($_SESSION);
-	session_destroy();
+	//unset($_SESSION);
+	//session_destroy();
  ?>
 

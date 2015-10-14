@@ -51,6 +51,25 @@ $pageTitle = "Home";
 			
 			<script src="js/slick.min.js"></script>
 			<script src="js/main.js"></script>
+			<script>
+			$(document).ready(function(){
+
+				$.post("https://<?php echo $_SERVER['SERVER_NAME'];?>/~e54061/wp/moviesJSON.php",function(data,success){
+
+					var carouselLinks = $(".carousel-link").toArray();
+					var i = 0;
+					var dataObj = JSON.parse(data);
+					$.each(dataObj,function(){
+						var htmlElement = carouselLinks[i];
+						$(htmlElement).find(".carousel-movie").attr("src",this.poster);
+						$(htmlElement).find(".carousel-movie").attr("alt",this.title);
+						i++;
+					})
+
+				})
+			})
+
+			</script>
 			<?php include("footer.php"); ?>
 		</div>
 
