@@ -969,6 +969,32 @@
 
 
     /*END CART PAGE*/
+
+    /*STYLING FOR CART PAGE IN MOBILE VIEW*/
+    @media screen and (max-width: 480px)
+    {
+        .ticket-table input
+        {
+            width:50%;
+        }
+
+        .screening
+        {
+            width:87.9%
+        }
+
+        #screening-total
+        {
+            width:83%;
+            padding:10px 10px;
+        }
+
+        #voucher-grand-total
+        {
+            width:88%;
+        }
+    }
+    /*END OF CART PAGE MOBILE VIEW*/
     
     /* START CUSTOMER DETAILS PAGE */
     #customer-details-form
@@ -1031,6 +1057,22 @@
     }
 
     /* END CUSTOMER DETAILS*/
+
+    /*STYLING FOR CUSTOMER DETAILS PAGE IN MOBILE VIEW*/
+    @media screen and (max-width: 480px)
+    {
+        #customer-details-form
+        {
+            width:100%;
+        }
+
+        #voucher-details
+        {
+            width:100%;
+            margin-top: 20px;
+        }
+    }
+    /*END OF CUSTOMER DETAILS PAGE MOBILE VIEW*/
 
     /* START TICKET PAGE */
 

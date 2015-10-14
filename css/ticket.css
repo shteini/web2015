@@ -131,3 +131,26 @@ h1 span {
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 480px)
+{
+    .cardWrap
+    {
+        width:100%;
+    }
+
+    .card
+    {
+      width:55%;
+    }
+
+    .cardleft
+    {
+        width:55%;
+    }
+
+    .cardRight
+    {
+        width:23%;
+    }
+}

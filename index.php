@@ -69,7 +69,7 @@ $pageTitle = "Home";
 					$('.carousel').slick({
 					slidesToShow: 3,
 				  	slidesToScroll: 1,
-				 	autoplay: false,
+				 	autoplay: true,
 				  	autoplaySpeed: 2500,
 					});
 					
