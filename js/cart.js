@@ -13,12 +13,10 @@ $(document).ready(function() {
 			screenings.push(quantaties);
 			
 		});
-		
-		//alert(JSON.stringify(screenings));
 		$.post("update-cart.php",{'data':JSON.stringify(screenings)})
 			.done(function(data){
 				//alert("Data Loaded: " + data);
-			});
+		});
 
 		var price = $(this).parents('tr').find('.ticket-price').val();
 		var qty = $(this).parents('tr').find('.qty').val();
@@ -28,6 +26,7 @@ $(document).ready(function() {
 		$(this).parents('tr').find('.sub-total').val(price*qty);
 
 		$('.sub-total').trigger("change");
+		$('.screening-total').trigger("change");
 
 	})
 
@@ -39,33 +38,18 @@ $(document).ready(function() {
 			grandTotal+=parseInt($(this).val(),10);
 		})
 
-		$('#grand-total').val(grandTotal.toFixed(2));
+		$('#grand-total').val(grandTotal.toFixed(2));	
 	})
 
-	$(".delete-screening").click(function(){
-		var screening = $(this).attr('name');
-		$(this).parents(".screening").fadeOut("slow","swing",function(){
-			$(this).parents(".screening").empty();
-			$(this).parents(".screening").remove();
-			$.post("delete-screening.php",{'idToRemove':JSON.stringify(screening)})
-				.done(function(result){
-				$('.sub-total').trigger("change"); //Not working at all
-			});
-			
-		});
-
+	$('.screening-total').change(function(){
+		var screeningTotal = 0;
+		$(this).parents('.screening').find('.ticket-row').each(function(){
+			var subtotal = $(this).find('.sub-total').val();
+			screeningTotal += parseInt(subtotal,10);
+		})
+		$(this).val(screeningTotal);
 
 	})
-
-
-
-
-
-
-
-
-
-
 
 	$(".delete-screening").click(function(){
 		var screening = $(this).attr('name');
@@ -76,14 +60,5 @@ $(document).ready(function() {
 			$('.sub-total').trigger("change");
 		});
 	})
-
-
-
-
-
-
-
-
-
 
 })

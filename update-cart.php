@@ -12,6 +12,7 @@
 		{
 
 			$_SESSION['testTicketBefore'] = "Not inside yet";
+			$_SESSION['cart']['screening'][$i]['screening_total'] = 0;
 			for($j = 0; $j < count($_SESSION['cart']['screening'][$i]['tickets']); $j++)
 			{
 				//$_SESSION['ticketTotalBefore'] = $_SESSION['cart']['screening'][$i]['tickets'][$j]['total'];
@@ -19,8 +20,12 @@
 				$_SESSION['cart']['screening'][$i]['tickets'][$j]['qty'] = $data[$i][$j];
 				$_SESSION['cart']['screening'][$i]['tickets'][$j]['total'] = ($_SESSION['cart']['screening'][$i]['tickets'][$j]['price'] * $_SESSION['cart']['screening'][$i]['tickets'][$j]['qty']);
 
+				$_SESSION['cart']['screening'][$i]['screening_total']+= $_SESSION['cart']['screening'][$i]['tickets'][$j]['total'];
 				//$_SESSION['ticketTotalAfter'] = $_SESSION['cart']['screening'][$i]['tickets'][$j]['total'];
-			}		
+			}
+
+
+
 		}
 		
 		$grandTotal = 0;

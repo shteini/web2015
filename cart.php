@@ -46,8 +46,8 @@ $pageTitle = "My Cart";
 					}
 					echo "</table>";
 					echo "<label for='screeningTotal'>Screening total: $</label>";
-					echo "<input type='number' name='screeningTotal' id='screening-total' min='0' readonly value='".$_SESSION['cart']['screening'][$i]['screening_total']."'>";
-					echo "<div class='remove-button-label'><label>Remove</label><button name='".$i."' class='delete-screening'>X</button></div>";
+					echo "<input type='number' name='screeningTotal' class='screening-total' min='0' readonly value='".$_SESSION['cart']['screening'][$i]['screening_total']."'>";
+					echo "<div class='remove-button-label'><label>Remove</label><a href='delete-screening.php?idremove=".$i."'><button class='delete-screening'>X</button></div></a>";
 					echo "</div>";		
 				}
 

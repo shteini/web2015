@@ -47,12 +47,15 @@ session_start();
 				
 				foreach($_SESSION['cart']['screening'][$i]['tickets'] as $ticket)
 				{
-					echo "<tr class='ticket-row'>";
-					echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
-					echo "<td class='ticket-data'>$".$ticket['price']."</td>";
-					echo "<td class='ticket-data'>".$ticket['qty']."</td>";
-					echo "<td class='ticket-data'>$".$ticket['total']."</td>";
-					echo "</tr>";
+					if($ticket['total'] > 0)
+					{
+						echo "<tr class='ticket-row'>";
+						echo "<td class='ticket-data'>".$ticket['ticket_type']."</td>";
+						echo "<td class='ticket-data'>$".$ticket['price']."</td>";
+						echo "<td class='ticket-data'>".$ticket['qty']."</td>";
+						echo "<td class='ticket-data'>$".$ticket['total']."</td>";
+						echo "</tr>";
+					}
 				}
 				echo "</table>";
 				echo "</div>";		
@@ -66,14 +69,16 @@ session_start();
 			echo "<a href='index.php'><button id='go-home'>Home</button></a>";
 			echo "</div>";
 		}
-
+		file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+		echo "<a href='index.php'><button id='go-home'>Home</button></a>";
+		ob_start();
 		?>
 		<!-- If time provided go to www.neocotic.com/qr.js/ to use qr codes :-) -->
 </body>
 </html>
 
 <?php 
-	file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents());
+	file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents(),FILE_APPEND);
 	unset($_SESSION);
 	session_destroy();
  ?>
