@@ -116,7 +116,7 @@ session_start();
 
 <?php 
 	file_put_contents("saved/".$_SESSION['customer_details']['email'].".html", ob_get_contents(),FILE_APPEND);
-	//unset($_SESSION);
-	//session_destroy();
+	unset($_SESSION);
+	session_destroy();
  ?>
 
