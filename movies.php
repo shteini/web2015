@@ -117,6 +117,32 @@ $pageTitle = "Now Showing";
 
 				var dataObj = JSON.parse(data);
 				$.each(dataObj,function(i, movie){
+<<<<<<< HEAD
+
+				var li = $("#"+i);
+				var htmlElement = $(li).find(".movie-item");
+				$(htmlElement).find(".movie-img").attr("src",movie.poster);
+				var description = movie.description[1];
+
+				var title = movie.title;
+				var rating = movie.rating;
+				var summary = movie.summary; // Not being used atm
+
+				$(htmlElement).find(".movie-information").find(".movieName").html(title);
+				$(htmlElement).find(".movie-information").find(".rating").attr("src",rating);
+				$(htmlElement).find(".movie-information").find(".movie-description").html(description);
+				var screenings = movie.screenings;
+				var sessionContainer = $(li).find(".sessions-container");
+				$.each(screenings, function(key,name){
+					var string = $("<div class='session'><p>"+key+"</p><p><a href='/bookings.php?movie="+movie.title.toLowerCase()+"&day="+key.toLowerCase()+"&time="+name+"'>"+name+"</a></p></div>");
+					$(sessionContainer).append(string);
+			});
+
+			$(htmlElement).parents("li").find("video").attr("src",movie.trailer);
+		})
+		
+	})
+=======
 					var li = $("#"+i);
 					var htmlElement = $(li).find(".movie-item");
 					$(htmlElement).find(".movie-img").attr("src",movie.poster);
@@ -140,6 +166,7 @@ $pageTitle = "Now Showing";
 				})
 		
 			})
+>>>>>>> 3a07e0dbc8d27dd290933fd762e43209a9d052e8
 
 
 		})
