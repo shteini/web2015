@@ -53,22 +53,66 @@ $pageTitle = "Home";
 			<script src="js/main.js"></script>
 			<script>
 			$(document).ready(function(){
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 3a07e0dbc8d27dd290933fd762e43209a9d052e8
 				$.post("https://<?php echo $_SERVER['SERVER_NAME'];?>/~e54061/wp/moviesJSON.php",function(data,success){
 
 					var carouselLinks = $(".carousel-link").toArray();
 					var i = 0;
 					var dataObj = JSON.parse(data);
 					$.each(dataObj,function(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3a07e0dbc8d27dd290933fd762e43209a9d052e8
 						var htmlElement = carouselLinks[i];
 						$(htmlElement).find(".carousel-movie").attr("src",this.poster);
 						$(htmlElement).find(".carousel-movie").attr("alt",this.title);
 						i++;
 					})
 
+<<<<<<< HEAD
 				})
 			})
 
+=======
+					$('.carousel').slick({
+					slidesToShow: 3,
+				  	slidesToScroll: 1,
+				 	autoplay: false,
+				  	autoplaySpeed: 2500,
+					});
+					
+					$(window).resize(function()
+					{
+						var windowSize = $(window).width();
+						
+						if(windowSize > 900)
+						{
+							$('.carousel').slick("slickSetOption","slidesToShow",3,true);
+							
+						}
+						else if(windowSize < 900 && windowSize > 600)
+						{
+							$('.carousel').slick("slickSetOption","slidesToShow",2,true);
+							$('.carousel').slick("slickSetOption","arrows",true,true);
+						}
+						else if(windowSize <= 600)
+						{
+							$('.carousel').slick("slickSetOption","slidesToShow",1,true);
+							$('.carousel').slick("slickSetOption","arrows",false,true);
+						}
+					})
+					
+					$(window).trigger("resize");
+						
+				})	
+	
+			})
+>>>>>>> 3a07e0dbc8d27dd290933fd762e43209a9d052e8
 			</script>
 			<?php include("footer.php"); ?>
 		</div>
