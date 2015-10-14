@@ -17,9 +17,7 @@ $pageTitle = "Home";
 			
 			<div id="poster">
 				
-				<p id="banner-header"><b>Silverado Grand Opening</b></p>
-				<p><b><i>Come along for a night of movies and popcorn to take you away...
-				<br>Thursday 15th October 2015</i></b></p>
+				<img id="goposter" src="css/resources/openingposter.jpg" alt="Grand Opening" />
 				
 			</div>
 

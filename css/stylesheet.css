@@ -74,24 +74,14 @@
     #goposter
     {
         width: 100%;
-        border-radius: 10px; /*sorry I fixed it was just helping :-)*/
+        border-radius: 10px;
     }
     
     #poster
     {
         width:100%;
-        height:323px;
         margin:0 auto;
         margin-top:10px;
-        border-radius:10px;
-        background-image:url("resources/banner.jpg");
-        background-size:cover;
-        background-repeat:no;
-        color:black;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        
     }
     
     #poster > #banner-header 
@@ -947,17 +937,6 @@
             align-self:center;
         }
 
-        #voucher
-        {
-            font-size: 15px;
-            padding: 10px;
-            border: 0;
-            box-shadow: inset 0 0 0 1px #9BADAD;
-            border-radius: 5px;
-            width: 20%;
-            margin-right: 27%;
-        }
-
         #grand-total
         {
             font-size: 15px;
@@ -973,7 +952,23 @@
     /*END CART PAGE*/
     
     /* START CUSTOMER DETAILS PAGE */
-    
+    #customer-details-form
+    {
+        width:45%;
+        display:inherit;
+        flex-direction:column;
+        padding-right:2.5%;  
+    }
+
+    #customer-details-form > label
+    {
+        font-size: 20px;
+        font-family: ThirdFont;
+        color:rgb(17, 43, 73);
+        padding-bottom: 5px;
+    }
+
+
     .customer-details
     {
         border: 1px solid #9BADAD;
@@ -982,9 +977,75 @@
         padding: 10px;
         font-size: 15px;
     }
-    
-    
+
+    #voucher
+    {
+        border: 1px solid #9BADAD;
+        box-shadow: inset 0 0 0 1px #9BADAD;
+        border-radius: 2px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #voucher-details label
+    {
+        font-size: 20px;
+        font-family: ThirdFont;
+        color: rgb(17, 43, 73);
+        padding-bottom: 5px;
+    }
+
+    #voucher-details
+    {
+        width:45%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction:column;
+    }
+
+    #voucher-details > p
+    {
+        font-size: 20px;
+        font-family: ThirdFont;
+        color: rgb(17, 43, 73);
+        padding-bottom: 5px; 
+    }
+
     /* END CUSTOMER DETAILS*/
+
+    /* START TICKET PAGE */
+
+    #no-ticket
+    {
+        margin-top: 25%;
+        display:flex;
+        flex-direction:column;
+        width:75%;
+        margin:15% auto;
+        align-items:center;
+    }
+
+    #go-home
+    {
+        padding:15px;
+        border-radius: 5px;
+        border: 1px solid #9BADAD;
+        box-shadow: 0 1px 0 #9BADAD;
+        background-color: rgb(236, 254, 254);
+        color:black;
+        font-size: 15px;
+        width:100%;
+
+    }
+
+    #go-home:active
+    {
+        box-shadow: none;
+        transform: translateY(2px);
+    } 
+    
+
+    /* END TICKET PAGE */
 
 
 
